@@ -82,67 +82,10 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="C:/Users/liran/Desktop/c-compiler_test/.gitattributes">
-			<Option target="c_compiler_test"/>
-		</Unit>
-		<Unit filename="C:/Users/liran/Desktop/c-compiler_test/Input_Files/output1.txt">
-			<Option target="c_compiler_test"/>
-		</Unit>
-		<Unit filename="C:/Users/liran/Desktop/c-compiler_test/Input_Files/output2.txt">
-			<Option target="c_compiler_test"/>
-		</Unit>
-		<Unit filename="C:/Users/liran/Desktop/c-compiler_test/Input_Files/output3.txt">
-			<Option target="c_compiler_test"/>
-		</Unit>
-		<Unit filename="C:/Users/liran/Desktop/c-compiler_test/Input_Files/output4.txt">
-			<Option target="c_compiler_test"/>
-		</Unit>
-		<Unit filename="C:/Users/liran/Desktop/c-compiler_test/Input_Files/output5.txt">
-			<Option target="c_compiler_test"/>
-		</Unit>
-		<Unit filename="C:/Users/liran/Desktop/c-compiler_test/Input_Files/output6.txt">
-			<Option target="c_compiler_test"/>
-		</Unit>
-		<Unit filename="C:/Users/liran/Desktop/c-compiler_test/Input_Files/output7.txt">
-			<Option target="c_compiler_test"/>
-		</Unit>
-		<Unit filename="C:/Users/liran/Desktop/c-compiler_test/Input_Files/output8.txt">
-			<Option target="c_compiler_test"/>
-		</Unit>
-		<Unit filename="C:/Users/liran/Desktop/c-compiler_test/Input_Files/sample1.c">
-			<Option target="c_compiler_test"/>
-		</Unit>
-		<Unit filename="C:/Users/liran/Desktop/c-compiler_test/Input_Files/sample2.c">
-			<Option target="c_compiler_test"/>
-		</Unit>
-		<Unit filename="C:/Users/liran/Desktop/c-compiler_test/Input_Files/sample3.c">
-			<Option target="c_compiler_test"/>
-		</Unit>
-		<Unit filename="C:/Users/liran/Desktop/c-compiler_test/Input_Files/sample4.c">
-			<Option target="c_compiler_test"/>
-		</Unit>
-		<Unit filename="C:/Users/liran/Desktop/c-compiler_test/Input_Files/sample5.c">
-			<Option target="c_compiler_test"/>
-		</Unit>
-		<Unit filename="C:/Users/liran/Desktop/c-compiler_test/Input_Files/sample6.c">
-			<Option target="c_compiler_test"/>
-		</Unit>
-		<Unit filename="C:/Users/liran/Desktop/c-compiler_test/Input_Files/sample7.c">
-			<Option target="c_compiler_test"/>
-		</Unit>
-		<Unit filename="C:/Users/liran/Desktop/c-compiler_test/Input_Files/sample8.c">
-			<Option target="c_compiler_test"/>
-		</Unit>
 		<Unit filename="C:/Users/liran/Desktop/c-compiler_test/compiler_files/CodeGenerator.c">
 			<Option target="c_compiler_test"/>
 		</Unit>
 		<Unit filename="C:/Users/liran/Desktop/c-compiler_test/compiler_files/CodeGenerator.h">
-			<Option target="c_compiler_test"/>
-		</Unit>
-		<Unit filename="C:/Users/liran/Desktop/c-compiler_test/compiler_files/compiler.exe">
-			<Option target="c_compiler_test"/>
-		</Unit>
-		<Unit filename="C:/Users/liran/Desktop/c-compiler_test/compiler_files/config.h">
 			<Option target="c_compiler_test"/>
 		</Unit>
 		<Unit filename="C:/Users/liran/Desktop/c-compiler_test/compiler_files/ctree.c">
@@ -157,40 +100,10 @@
 		<Unit filename="C:/Users/liran/Desktop/c-compiler_test/compiler_files/dsm_extension.h">
 			<Option target="c_compiler_test"/>
 		</Unit>
-		<Unit filename="C:/Users/liran/Desktop/c-compiler_test/compiler_files/f2.cactivity_gen.cpp">
-			<Option target="c_compiler_test"/>
-		</Unit>
-		<Unit filename="C:/Users/liran/Desktop/c-compiler_test/compiler_files/f2.cactivity_gen.h">
-			<Option target="c_compiler_test"/>
-		</Unit>
-		<Unit filename="C:/Users/liran/Desktop/c-compiler_test/compiler_files/f2.cactivity_gen_spawn.cpp">
-			<Option target="c_compiler_test"/>
-		</Unit>
-		<Unit filename="C:/Users/liran/Desktop/c-compiler_test/compiler_files/f3.cactivity_gen.cpp">
-			<Option target="c_compiler_test"/>
-		</Unit>
-		<Unit filename="C:/Users/liran/Desktop/c-compiler_test/compiler_files/f3.cactivity_gen.h">
-			<Option target="c_compiler_test"/>
-		</Unit>
-		<Unit filename="C:/Users/liran/Desktop/c-compiler_test/compiler_files/f3.cactivity_gen_spawn.cpp">
-			<Option target="c_compiler_test"/>
-		</Unit>
-		<Unit filename="C:/Users/liran/Desktop/c-compiler_test/compiler_files/globals.h">
-			<Option target="c_compiler_test"/>
-		</Unit>
 		<Unit filename="C:/Users/liran/Desktop/c-compiler_test/compiler_files/gram.c">
 			<Option target="c_compiler_test"/>
 		</Unit>
 		<Unit filename="C:/Users/liran/Desktop/c-compiler_test/compiler_files/gram.h">
-			<Option target="c_compiler_test"/>
-		</Unit>
-		<Unit filename="C:/Users/liran/Desktop/c-compiler_test/compiler_files/gram.y">
-			<Option target="c_compiler_test"/>
-		</Unit>
-		<Unit filename="C:/Users/liran/Desktop/c-compiler_test/compiler_files/gram_parser.cpp.h">
-			<Option target="c_compiler_test"/>
-		</Unit>
-		<Unit filename="C:/Users/liran/Desktop/c-compiler_test/compiler_files/head.h">
 			<Option target="c_compiler_test"/>
 		</Unit>
 		<Unit filename="C:/Users/liran/Desktop/c-compiler_test/compiler_files/heap.c">
@@ -199,16 +112,10 @@
 		<Unit filename="C:/Users/liran/Desktop/c-compiler_test/compiler_files/heap.h">
 			<Option target="c_compiler_test"/>
 		</Unit>
-		<Unit filename="C:/Users/liran/Desktop/c-compiler_test/compiler_files/identify.h">
-			<Option target="c_compiler_test"/>
-		</Unit>
 		<Unit filename="C:/Users/liran/Desktop/c-compiler_test/compiler_files/lexer.c">
 			<Option target="c_compiler_test"/>
 		</Unit>
 		<Unit filename="C:/Users/liran/Desktop/c-compiler_test/compiler_files/lexer.h">
-			<Option target="c_compiler_test"/>
-		</Unit>
-		<Unit filename="C:/Users/liran/Desktop/c-compiler_test/compiler_files/lexer.l">
 			<Option target="c_compiler_test"/>
 		</Unit>
 		<Unit filename="C:/Users/liran/Desktop/c-compiler_test/compiler_files/nmetab.c">
@@ -221,9 +128,6 @@
 			<Option target="c_compiler_test"/>
 		</Unit>
 		<Unit filename="C:/Users/liran/Desktop/c-compiler_test/compiler_files/prnttree.h">
-			<Option target="c_compiler_test"/>
-		</Unit>
-		<Unit filename="C:/Users/liran/Desktop/c-compiler_test/compiler_files/srcgram.y">
 			<Option target="c_compiler_test"/>
 		</Unit>
 		<Unit filename="C:/Users/liran/Desktop/c-compiler_test/compiler_files/symtab.c">
@@ -248,9 +152,6 @@
 			<Option target="c_compiler_test"/>
 		</Unit>
 		<Unit filename="C:/Users/liran/Desktop/c-compiler_test/compiler_files/treestk.h">
-			<Option target="c_compiler_test"/>
-		</Unit>
-		<Unit filename="C:/Users/liran/Desktop/c-compiler_test/compiler_files/utype.h">
 			<Option target="c_compiler_test"/>
 		</Unit>
 		<Unit filename="C:/Users/liran/Desktop/c-compiler_test/CMakeLists.txt">

@@ -1,19 +1,7 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/c_compiler_test.dir/Input_Files/sample1.c.obj"
-  "CMakeFiles/c_compiler_test.dir/Input_Files/sample2.c.obj"
-  "CMakeFiles/c_compiler_test.dir/Input_Files/sample3.c.obj"
-  "CMakeFiles/c_compiler_test.dir/Input_Files/sample4.c.obj"
-  "CMakeFiles/c_compiler_test.dir/Input_Files/sample5.c.obj"
-  "CMakeFiles/c_compiler_test.dir/Input_Files/sample6.c.obj"
-  "CMakeFiles/c_compiler_test.dir/Input_Files/sample7.c.obj"
-  "CMakeFiles/c_compiler_test.dir/Input_Files/sample8.c.obj"
   "CMakeFiles/c_compiler_test.dir/compiler_files/CodeGenerator.c.obj"
   "CMakeFiles/c_compiler_test.dir/compiler_files/ctree.c.obj"
   "CMakeFiles/c_compiler_test.dir/compiler_files/dsm_extension.c.obj"
-  "CMakeFiles/c_compiler_test.dir/compiler_files/f2.cactivity_gen.cpp.obj"
-  "CMakeFiles/c_compiler_test.dir/compiler_files/f2.cactivity_gen_spawn.cpp.obj"
-  "CMakeFiles/c_compiler_test.dir/compiler_files/f3.cactivity_gen.cpp.obj"
-  "CMakeFiles/c_compiler_test.dir/compiler_files/f3.cactivity_gen_spawn.cpp.obj"
   "CMakeFiles/c_compiler_test.dir/compiler_files/gram.c.obj"
   "CMakeFiles/c_compiler_test.dir/compiler_files/heap.c.obj"
   "CMakeFiles/c_compiler_test.dir/compiler_files/lexer.c.obj"
@@ -30,6 +18,6 @@ file(REMOVE_RECURSE
 )
 
 # Per-language clean rules from dependency scanning.
-foreach(lang C CXX)
+foreach(lang C)
   include(CMakeFiles/c_compiler_test.dir/cmake_clean_${lang}.cmake OPTIONAL)
 endforeach()

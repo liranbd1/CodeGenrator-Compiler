@@ -1,65 +1,21 @@
 cmake_minimum_required(VERSION 3.15)
 project(c_compiler_test)
 
-set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_C_STANDARD 90)
 
 include_directories(compiler_files)
 
 add_executable(c_compiler_test
         compiler_files/CodeGenerator.c
-        compiler_files/CodeGenerator.h
-        compiler_files/compiler.exe
-        compiler_files/config.h
         compiler_files/ctree.c
-        compiler_files/ctree.h
-        compiler_files/dsm_extension.c
-        compiler_files/dsm_extension.h
-        compiler_files/f2.cactivity_gen.cpp
-        compiler_files/f2.cactivity_gen.h
-        compiler_files/f2.cactivity_gen_spawn.cpp
-        compiler_files/f3.cactivity_gen.cpp
-        compiler_files/f3.cactivity_gen.h
-        compiler_files/f3.cactivity_gen_spawn.cpp
-        compiler_files/globals.h
-        compiler_files/gram.c
-        compiler_files/gram.h
-        compiler_files/gram.y
-        compiler_files/gram_parser.cpp.h
-        compiler_files/head.h
         compiler_files/heap.c
-        compiler_files/heap.h
-        compiler_files/identify.h
-        compiler_files/lexer.c
-        compiler_files/lexer.h
-        compiler_files/lexer.l
         compiler_files/nmetab.c
-        compiler_files/nmetab.h
         compiler_files/prnttree.c
-        compiler_files/prnttree.h
-        compiler_files/srcgram.y
         compiler_files/symtab.c
-        compiler_files/symtab.h
         compiler_files/token.c
-        compiler_files/token.h
         compiler_files/tree.c
-        compiler_files/tree.h
         compiler_files/treestk.c
-        compiler_files/treestk.h
-        compiler_files/utype.h
-        Input_Files/output1.txt
-        Input_Files/output2.txt
-        Input_Files/output3.txt
-        Input_Files/output4.txt
-        Input_Files/output5.txt
-        Input_Files/output6.txt
-        Input_Files/output7.txt
-        Input_Files/output8.txt
-        Input_Files/sample1.c
-        Input_Files/sample2.c
-        Input_Files/sample3.c
-        Input_Files/sample4.c
-        Input_Files/sample5.c
-        Input_Files/sample6.c
-        Input_Files/sample7.c
-        Input_Files/sample8.c
-        .gitattributes)
+        compiler_files/dsm_extension.c
+        compiler_files/lexer.c
+        compiler_files/gram.c
+        )

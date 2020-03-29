@@ -1,8 +1,9 @@
 #include	"CodeGenerator.h"
+#include "tree.h"
 
 typedef struct symbol_table {
 
-	char name;
+	char* name;
     char* type;
     int address;
     int size;
@@ -21,7 +22,9 @@ typedef struct variable {
 
 Variable *head;
 Symbol_table *tmp;
-int Find (char name, Variable* head)
+int isLoadingVariable = 0;
+
+int Find (char* name)
 {
     Variable* currentPtr = head;
     while (currentPtr != NULL)
@@ -36,7 +39,7 @@ int Find (char name, Variable* head)
 }
 
 /*Adding data to the Symbol table*/
-void Add (Symbol_table * newSymbol, Variable* head)
+void Add (Symbol_table * newSymbol)
 {
     // Not our first variable
     if (head != NULL)
@@ -47,7 +50,7 @@ void Add (Symbol_table * newSymbol, Variable* head)
         {
             ptr->last = newVariable;
         }
-
+        newSymbol->address = ptr->table->address + ptr->table->size;
         newVariable->table = newSymbol;
         newVariable->prev = ptr;
         ptr->next = newVariable;
@@ -57,24 +60,25 @@ void Add (Symbol_table * newSymbol, Variable* head)
     // Our first variable
     else
     {
-        Variable *newHead = (Variable*)malloc(sizeof(Variable));
-        newHead->table = newSymbol;
-        newHead->next = NULL;
-        newHead->prev = NULL;
-        newHead->last = newHead;
-        newHead->first = newHead;
+        head = (Variable*)malloc(sizeof(Variable));
+        newSymbol->address = 5;
+        head->table = newSymbol;
+        head->next = NULL;
+        head->prev = NULL;
+        head->last = head;
+        head->first = head;
     }
 }
 
 //Removing a variable from the Symbol table
-void Remove(char name, Variable* head)
+void Remove(char name)
 {
    Variable *ptr = head;
     Symbol_table *tmpTable;
     while (ptr->next != NULL)
     {
         tmpTable = ptr->table;
-        if (tmpTable->name == name)
+        if (*tmpTable->name == name)
         {
             free(tmpTable);
             Variable *prev = ptr->prev;
@@ -104,7 +108,8 @@ int  code_recur(treenode *root)
 	if_node  *ifn;
 	for_node *forn;
 	leafnode *leaf;
-	
+	int addressOfVariable;
+				
     if (!root)
         return SUCCESS;
 
@@ -115,25 +120,26 @@ int  code_recur(treenode *root)
 				case TN_LABEL:
 					/* Maybe you will use it later */
 					break;
-
+				
 				case TN_IDENT:
 					/* variable case */
 					/*
 					*	In order to get the identifier name you have to use:
 					*	leaf->data.sval->str
 					*/
-					//TODO: This is the case where we deal with variables what does it mean?
-					/* variable case */
-					/*
-					*	In order to get the identifier name you have to use:
-					*	leaf->data.sval->str
-					 *	means that this is where we are going to get a new variable to save to the symbol table?
-					*/
-					// So here we are getting an Identifier basically the name of the variable
-					// So all we need to do is to call the right value from our table
-                    //Finding the value in the table
-
-
+				// When we have for example int a; we first get to this one meaing we are going to the identifier first
+				// From that I can see that we first need to see if this variable is already in our Symbol_table.
+				//The case we don't return a 0
+				//printf("TN_IDENT\n");
+				addressOfVariable = Find(leaf->data.sval->str);
+				if(addressOfVariable != 0) {
+                    printf("ldc %d\n", addressOfVariable);
+                    if(isLoadingVariable)
+                    {
+                        printf("ind\n");
+                    }
+                }
+				//	printf("We are in teh Variable case\n");
 					break;
 
 				case TN_COMMENT:
@@ -297,7 +303,9 @@ int  code_recur(treenode *root)
 						/* The expression that you need to print is located in */
 						/* the currentNode->right->right sub tree */
 						/* Look at the output AST structure! */
+						isLoadingVariable = 1;
 						code_recur(root->rnode->rnode);
+						isLoadingVariable = 0;
 						printf("print\n");
 					}
 					else {
@@ -367,10 +375,34 @@ int  code_recur(treenode *root)
 					code_recur(root->rnode);
 					break;
 					
-				case TN_DECL://Declaring a variable
-					code_recur(root->lnode);
-					code_recur(root->rnode);
-					break;
+				case TN_DECL:
+                    tmp = (Symbol_table*)malloc(sizeof(Symbol_table));
+                    code_recur(root->lnode);
+                    code_recur(root->rnode);
+                    leaf =(leafnode*)root->rnode;
+                    tmp->name = leaf->data.sval->str;
+                    leaf = (leafnode*)root->lnode->lnode;
+                    if (leaf->hdr.tok == INT)
+                    {
+                        tmp->size = sizeof(int);
+                        tmp->type = "int";
+                    }
+
+                    if (leaf->hdr.tok == DOUBLE)
+                    {
+                        tmp->size = sizeof(double);
+                        tmp->type = "double";
+                    }
+
+                    if (leaf->hdr.tok == FLOAT)
+                    {
+                        tmp->size = sizeof(float);
+                        tmp->type = "float";
+                    }
+
+                    Add(tmp);
+                   // printf("ldc %d\n", tmp->address);
+                    break;
 
 				case TN_DECL_LIST:
 					/* Maybe you will use it later */
@@ -501,7 +533,9 @@ int  code_recur(treenode *root)
 						/* Regular assignment "=" */
 						/* e.g. x = 5; */
 						code_recur(root->lnode);
+						isLoadingVariable = 1;
 						code_recur(root->rnode);
+						isLoadingVariable = 0;
 						printf("sto\n");
 					}
 					else if (root->hdr.tok == PLUS_EQ){

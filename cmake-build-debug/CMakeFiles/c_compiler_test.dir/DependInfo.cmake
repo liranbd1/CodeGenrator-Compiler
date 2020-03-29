@@ -1,18 +1,9 @@
 # The set of languages for which implicit dependencies are needed:
 set(CMAKE_DEPENDS_LANGUAGES
   "C"
-  "CXX"
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "C:/Users/liran/Desktop/c-compiler_test/Input_Files/sample1.c" "C:/Users/liran/Desktop/c-compiler_test/cmake-build-debug/CMakeFiles/c_compiler_test.dir/Input_Files/sample1.c.obj"
-  "C:/Users/liran/Desktop/c-compiler_test/Input_Files/sample2.c" "C:/Users/liran/Desktop/c-compiler_test/cmake-build-debug/CMakeFiles/c_compiler_test.dir/Input_Files/sample2.c.obj"
-  "C:/Users/liran/Desktop/c-compiler_test/Input_Files/sample3.c" "C:/Users/liran/Desktop/c-compiler_test/cmake-build-debug/CMakeFiles/c_compiler_test.dir/Input_Files/sample3.c.obj"
-  "C:/Users/liran/Desktop/c-compiler_test/Input_Files/sample4.c" "C:/Users/liran/Desktop/c-compiler_test/cmake-build-debug/CMakeFiles/c_compiler_test.dir/Input_Files/sample4.c.obj"
-  "C:/Users/liran/Desktop/c-compiler_test/Input_Files/sample5.c" "C:/Users/liran/Desktop/c-compiler_test/cmake-build-debug/CMakeFiles/c_compiler_test.dir/Input_Files/sample5.c.obj"
-  "C:/Users/liran/Desktop/c-compiler_test/Input_Files/sample6.c" "C:/Users/liran/Desktop/c-compiler_test/cmake-build-debug/CMakeFiles/c_compiler_test.dir/Input_Files/sample6.c.obj"
-  "C:/Users/liran/Desktop/c-compiler_test/Input_Files/sample7.c" "C:/Users/liran/Desktop/c-compiler_test/cmake-build-debug/CMakeFiles/c_compiler_test.dir/Input_Files/sample7.c.obj"
-  "C:/Users/liran/Desktop/c-compiler_test/Input_Files/sample8.c" "C:/Users/liran/Desktop/c-compiler_test/cmake-build-debug/CMakeFiles/c_compiler_test.dir/Input_Files/sample8.c.obj"
   "C:/Users/liran/Desktop/c-compiler_test/compiler_files/CodeGenerator.c" "C:/Users/liran/Desktop/c-compiler_test/cmake-build-debug/CMakeFiles/c_compiler_test.dir/compiler_files/CodeGenerator.c.obj"
   "C:/Users/liran/Desktop/c-compiler_test/compiler_files/ctree.c" "C:/Users/liran/Desktop/c-compiler_test/cmake-build-debug/CMakeFiles/c_compiler_test.dir/compiler_files/ctree.c.obj"
   "C:/Users/liran/Desktop/c-compiler_test/compiler_files/dsm_extension.c" "C:/Users/liran/Desktop/c-compiler_test/cmake-build-debug/CMakeFiles/c_compiler_test.dir/compiler_files/dsm_extension.c.obj"
@@ -30,18 +21,6 @@ set(CMAKE_C_COMPILER_ID "GNU")
 
 # The include file search paths:
 set(CMAKE_C_TARGET_INCLUDE_PATH
-  "../compiler_files"
-  )
-set(CMAKE_DEPENDS_CHECK_CXX
-  "C:/Users/liran/Desktop/c-compiler_test/compiler_files/f2.cactivity_gen.cpp" "C:/Users/liran/Desktop/c-compiler_test/cmake-build-debug/CMakeFiles/c_compiler_test.dir/compiler_files/f2.cactivity_gen.cpp.obj"
-  "C:/Users/liran/Desktop/c-compiler_test/compiler_files/f2.cactivity_gen_spawn.cpp" "C:/Users/liran/Desktop/c-compiler_test/cmake-build-debug/CMakeFiles/c_compiler_test.dir/compiler_files/f2.cactivity_gen_spawn.cpp.obj"
-  "C:/Users/liran/Desktop/c-compiler_test/compiler_files/f3.cactivity_gen.cpp" "C:/Users/liran/Desktop/c-compiler_test/cmake-build-debug/CMakeFiles/c_compiler_test.dir/compiler_files/f3.cactivity_gen.cpp.obj"
-  "C:/Users/liran/Desktop/c-compiler_test/compiler_files/f3.cactivity_gen_spawn.cpp" "C:/Users/liran/Desktop/c-compiler_test/cmake-build-debug/CMakeFiles/c_compiler_test.dir/compiler_files/f3.cactivity_gen_spawn.cpp.obj"
-  )
-set(CMAKE_CXX_COMPILER_ID "GNU")
-
-# The include file search paths:
-set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "../compiler_files"
   )
 
