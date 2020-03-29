@@ -196,21 +196,31 @@ int  code_recur(treenode *root)
 				if (ifn->else_n == NULL) {
 					/* if case (without else)*/
 					code_recur(ifn->cond);
+					printf("fjp end\n");
 					code_recur(ifn->then_n);
+					printf("end:\n");
 				}
 				else {
 					/* if - else case*/ 
 					code_recur(ifn->cond);
+					printf("fjp else\n");
 					code_recur(ifn->then_n);
+					printf("ujp end\n");
+					printf("else:\n");
 					code_recur(ifn->else_n);
+					printf("end:\n");
 				}
 				break;
 				
 			case TN_COND_EXPR:
 				/* (cond)?(exp):(exp); */
 				code_recur(ifn->cond);
+				printf("fjp else\n");
 				code_recur(ifn->then_n);
+				printf("ujp end\n");
+				printf("else:\n");
 				code_recur(ifn->else_n);
+				printf("end:\n");
 				break;
 
 			default:

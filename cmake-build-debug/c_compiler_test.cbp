@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="c_compiler_test"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="C:/Users/liran/Desktop/c-compiler_test/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/liran/Desktop/c-compiler_test/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/liran/Desktop/c-compiler_test/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/liran/Desktop/c-compiler_test/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/liran/Desktop/c-compiler_test/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="c_compiler_test">
+				<Option output="C:/Users/liran/Desktop/c-compiler_test/cmake-build-debug/c_compiler_test.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/liran/Desktop/c-compiler_test/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/liran/Desktop/c-compiler_test/compiler_files"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/9.2.0/include/c++"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/9.2.0/include/c++/mingw32"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/9.2.0/include/c++/backward"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/9.2.0/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/9.2.0/../../../../include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/9.2.0/include-fixed"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/liran/Desktop/c-compiler_test/cmake-build-debug/Makefile&quot;  VERBOSE=1 c_compiler_test"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/liran/Desktop/c-compiler_test/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/liran/Desktop/c-compiler_test/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/liran/Desktop/c-compiler_test/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="c_compiler_test/fast">
+				<Option output="C:/Users/liran/Desktop/c-compiler_test/cmake-build-debug/c_compiler_test.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/liran/Desktop/c-compiler_test/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/liran/Desktop/c-compiler_test/compiler_files"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/9.2.0/include/c++"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/9.2.0/include/c++/mingw32"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/9.2.0/include/c++/backward"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/9.2.0/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/9.2.0/../../../../include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/9.2.0/include-fixed"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/liran/Desktop/c-compiler_test/cmake-build-debug/Makefile&quot;  VERBOSE=1 c_compiler_test/fast"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/liran/Desktop/c-compiler_test/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/liran/Desktop/c-compiler_test/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/liran/Desktop/c-compiler_test/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="C:/Users/liran/Desktop/c-compiler_test/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/liran/Desktop/c-compiler_test/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/liran/Desktop/c-compiler_test/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/liran/Desktop/c-compiler_test/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/liran/Desktop/c-compiler_test/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="C:/Users/liran/Desktop/c-compiler_test/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/liran/Desktop/c-compiler_test/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/liran/Desktop/c-compiler_test/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/liran/Desktop/c-compiler_test/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/liran/Desktop/c-compiler_test/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="C:/Users/liran/Desktop/c-compiler_test/.gitattributes">
+			<Option target="c_compiler_test"/>
+		</Unit>
+		<Unit filename="C:/Users/liran/Desktop/c-compiler_test/Input_Files/output1.txt">
+			<Option target="c_compiler_test"/>
+		</Unit>
+		<Unit filename="C:/Users/liran/Desktop/c-compiler_test/Input_Files/output2.txt">
+			<Option target="c_compiler_test"/>
+		</Unit>
+		<Unit filename="C:/Users/liran/Desktop/c-compiler_test/Input_Files/output3.txt">
+			<Option target="c_compiler_test"/>
+		</Unit>
+		<Unit filename="C:/Users/liran/Desktop/c-compiler_test/Input_Files/output4.txt">
+			<Option target="c_compiler_test"/>
+		</Unit>
+		<Unit filename="C:/Users/liran/Desktop/c-compiler_test/Input_Files/output5.txt">
+			<Option target="c_compiler_test"/>
+		</Unit>
+		<Unit filename="C:/Users/liran/Desktop/c-compiler_test/Input_Files/output6.txt">
+			<Option target="c_compiler_test"/>
+		</Unit>
+		<Unit filename="C:/Users/liran/Desktop/c-compiler_test/Input_Files/output7.txt">
+			<Option target="c_compiler_test"/>
+		</Unit>
+		<Unit filename="C:/Users/liran/Desktop/c-compiler_test/Input_Files/output8.txt">
+			<Option target="c_compiler_test"/>
+		</Unit>
+		<Unit filename="C:/Users/liran/Desktop/c-compiler_test/Input_Files/sample1.c">
+			<Option target="c_compiler_test"/>
+		</Unit>
+		<Unit filename="C:/Users/liran/Desktop/c-compiler_test/Input_Files/sample2.c">
+			<Option target="c_compiler_test"/>
+		</Unit>
+		<Unit filename="C:/Users/liran/Desktop/c-compiler_test/Input_Files/sample3.c">
+			<Option target="c_compiler_test"/>
+		</Unit>
+		<Unit filename="C:/Users/liran/Desktop/c-compiler_test/Input_Files/sample4.c">
+			<Option target="c_compiler_test"/>
+		</Unit>
+		<Unit filename="C:/Users/liran/Desktop/c-compiler_test/Input_Files/sample5.c">
+			<Option target="c_compiler_test"/>
+		</Unit>
+		<Unit filename="C:/Users/liran/Desktop/c-compiler_test/Input_Files/sample6.c">
+			<Option target="c_compiler_test"/>
+		</Unit>
+		<Unit filename="C:/Users/liran/Desktop/c-compiler_test/Input_Files/sample7.c">
+			<Option target="c_compiler_test"/>
+		</Unit>
+		<Unit filename="C:/Users/liran/Desktop/c-compiler_test/Input_Files/sample8.c">
+			<Option target="c_compiler_test"/>
+		</Unit>
+		<Unit filename="C:/Users/liran/Desktop/c-compiler_test/compiler_files/CodeGenerator.c">
+			<Option target="c_compiler_test"/>
+		</Unit>
+		<Unit filename="C:/Users/liran/Desktop/c-compiler_test/compiler_files/CodeGenerator.h">
+			<Option target="c_compiler_test"/>
+		</Unit>
+		<Unit filename="C:/Users/liran/Desktop/c-compiler_test/compiler_files/compiler.exe">
+			<Option target="c_compiler_test"/>
+		</Unit>
+		<Unit filename="C:/Users/liran/Desktop/c-compiler_test/compiler_files/config.h">
+			<Option target="c_compiler_test"/>
+		</Unit>
+		<Unit filename="C:/Users/liran/Desktop/c-compiler_test/compiler_files/ctree.c">
+			<Option target="c_compiler_test"/>
+		</Unit>
+		<Unit filename="C:/Users/liran/Desktop/c-compiler_test/compiler_files/ctree.h">
+			<Option target="c_compiler_test"/>
+		</Unit>
+		<Unit filename="C:/Users/liran/Desktop/c-compiler_test/compiler_files/dsm_extension.c">
+			<Option target="c_compiler_test"/>
+		</Unit>
+		<Unit filename="C:/Users/liran/Desktop/c-compiler_test/compiler_files/dsm_extension.h">
+			<Option target="c_compiler_test"/>
+		</Unit>
+		<Unit filename="C:/Users/liran/Desktop/c-compiler_test/compiler_files/f2.cactivity_gen.cpp">
+			<Option target="c_compiler_test"/>
+		</Unit>
+		<Unit filename="C:/Users/liran/Desktop/c-compiler_test/compiler_files/f2.cactivity_gen.h">
+			<Option target="c_compiler_test"/>
+		</Unit>
+		<Unit filename="C:/Users/liran/Desktop/c-compiler_test/compiler_files/f2.cactivity_gen_spawn.cpp">
+			<Option target="c_compiler_test"/>
+		</Unit>
+		<Unit filename="C:/Users/liran/Desktop/c-compiler_test/compiler_files/f3.cactivity_gen.cpp">
+			<Option target="c_compiler_test"/>
+		</Unit>
+		<Unit filename="C:/Users/liran/Desktop/c-compiler_test/compiler_files/f3.cactivity_gen.h">
+			<Option target="c_compiler_test"/>
+		</Unit>
+		<Unit filename="C:/Users/liran/Desktop/c-compiler_test/compiler_files/f3.cactivity_gen_spawn.cpp">
+			<Option target="c_compiler_test"/>
+		</Unit>
+		<Unit filename="C:/Users/liran/Desktop/c-compiler_test/compiler_files/globals.h">
+			<Option target="c_compiler_test"/>
+		</Unit>
+		<Unit filename="C:/Users/liran/Desktop/c-compiler_test/compiler_files/gram.c">
+			<Option target="c_compiler_test"/>
+		</Unit>
+		<Unit filename="C:/Users/liran/Desktop/c-compiler_test/compiler_files/gram.h">
+			<Option target="c_compiler_test"/>
+		</Unit>
+		<Unit filename="C:/Users/liran/Desktop/c-compiler_test/compiler_files/gram.y">
+			<Option target="c_compiler_test"/>
+		</Unit>
+		<Unit filename="C:/Users/liran/Desktop/c-compiler_test/compiler_files/gram_parser.cpp.h">
+			<Option target="c_compiler_test"/>
+		</Unit>
+		<Unit filename="C:/Users/liran/Desktop/c-compiler_test/compiler_files/head.h">
+			<Option target="c_compiler_test"/>
+		</Unit>
+		<Unit filename="C:/Users/liran/Desktop/c-compiler_test/compiler_files/heap.c">
+			<Option target="c_compiler_test"/>
+		</Unit>
+		<Unit filename="C:/Users/liran/Desktop/c-compiler_test/compiler_files/heap.h">
+			<Option target="c_compiler_test"/>
+		</Unit>
+		<Unit filename="C:/Users/liran/Desktop/c-compiler_test/compiler_files/identify.h">
+			<Option target="c_compiler_test"/>
+		</Unit>
+		<Unit filename="C:/Users/liran/Desktop/c-compiler_test/compiler_files/lexer.c">
+			<Option target="c_compiler_test"/>
+		</Unit>
+		<Unit filename="C:/Users/liran/Desktop/c-compiler_test/compiler_files/lexer.h">
+			<Option target="c_compiler_test"/>
+		</Unit>
+		<Unit filename="C:/Users/liran/Desktop/c-compiler_test/compiler_files/lexer.l">
+			<Option target="c_compiler_test"/>
+		</Unit>
+		<Unit filename="C:/Users/liran/Desktop/c-compiler_test/compiler_files/nmetab.c">
+			<Option target="c_compiler_test"/>
+		</Unit>
+		<Unit filename="C:/Users/liran/Desktop/c-compiler_test/compiler_files/nmetab.h">
+			<Option target="c_compiler_test"/>
+		</Unit>
+		<Unit filename="C:/Users/liran/Desktop/c-compiler_test/compiler_files/prnttree.c">
+			<Option target="c_compiler_test"/>
+		</Unit>
+		<Unit filename="C:/Users/liran/Desktop/c-compiler_test/compiler_files/prnttree.h">
+			<Option target="c_compiler_test"/>
+		</Unit>
+		<Unit filename="C:/Users/liran/Desktop/c-compiler_test/compiler_files/srcgram.y">
+			<Option target="c_compiler_test"/>
+		</Unit>
+		<Unit filename="C:/Users/liran/Desktop/c-compiler_test/compiler_files/symtab.c">
+			<Option target="c_compiler_test"/>
+		</Unit>
+		<Unit filename="C:/Users/liran/Desktop/c-compiler_test/compiler_files/symtab.h">
+			<Option target="c_compiler_test"/>
+		</Unit>
+		<Unit filename="C:/Users/liran/Desktop/c-compiler_test/compiler_files/token.c">
+			<Option target="c_compiler_test"/>
+		</Unit>
+		<Unit filename="C:/Users/liran/Desktop/c-compiler_test/compiler_files/token.h">
+			<Option target="c_compiler_test"/>
+		</Unit>
+		<Unit filename="C:/Users/liran/Desktop/c-compiler_test/compiler_files/tree.c">
+			<Option target="c_compiler_test"/>
+		</Unit>
+		<Unit filename="C:/Users/liran/Desktop/c-compiler_test/compiler_files/tree.h">
+			<Option target="c_compiler_test"/>
+		</Unit>
+		<Unit filename="C:/Users/liran/Desktop/c-compiler_test/compiler_files/treestk.c">
+			<Option target="c_compiler_test"/>
+		</Unit>
+		<Unit filename="C:/Users/liran/Desktop/c-compiler_test/compiler_files/treestk.h">
+			<Option target="c_compiler_test"/>
+		</Unit>
+		<Unit filename="C:/Users/liran/Desktop/c-compiler_test/compiler_files/utype.h">
+			<Option target="c_compiler_test"/>
+		</Unit>
+		<Unit filename="C:/Users/liran/Desktop/c-compiler_test/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

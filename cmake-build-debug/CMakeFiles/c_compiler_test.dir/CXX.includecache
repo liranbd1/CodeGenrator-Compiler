@@ -1,0 +1,32 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/liran/Desktop/c-compiler_test/compiler_files/f2.cactivity_gen.cpp
+stdio.h
+-
+activity_gen.h
+C:/Users/liran/Desktop/c-compiler_test/compiler_files/activity_gen.h
+consistency_api.h
+C:/Users/liran/Desktop/c-compiler_test/compiler_files/consistency_api.h
+
+C:/Users/liran/Desktop/c-compiler_test/compiler_files/f2.cactivity_gen_spawn.cpp
+activity_gen.h
+C:/Users/liran/Desktop/c-compiler_test/compiler_files/activity_gen.h
+
+C:/Users/liran/Desktop/c-compiler_test/compiler_files/f3.cactivity_gen.cpp
+stdio.h
+-
+activity_gen.h
+C:/Users/liran/Desktop/c-compiler_test/compiler_files/activity_gen.h
+consistency_api.h
+C:/Users/liran/Desktop/c-compiler_test/compiler_files/consistency_api.h
+
+C:/Users/liran/Desktop/c-compiler_test/compiler_files/f3.cactivity_gen_spawn.cpp
+activity_gen.h
+C:/Users/liran/Desktop/c-compiler_test/compiler_files/activity_gen.h
+
