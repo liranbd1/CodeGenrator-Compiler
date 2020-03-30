@@ -49,10 +49,13 @@ void Add (Symbol_table * newSymbol)
         while (ptr->next != NULL)
         {
             ptr->last = newVariable;
+            ptr = ptr->next;
         }
         newSymbol->address = ptr->table->address + ptr->table->size;
         newVariable->table = newSymbol;
         newVariable->prev = ptr;
+        newVariable->next = NULL;
+        newVariable->last = newVariable;
         ptr->next = newVariable;
         ptr->last = newVariable;
         newVariable->first = ptr->first;
@@ -542,7 +545,9 @@ int  code_recur(treenode *root)
 						/* Plus equal assignment "+=" */
 						/* e.g. x += 5; */
 						code_recur(root->lnode);
+						isLoadingVariable = 1;
 						code_recur(root->rnode);
+						isLoadingVariable = 0;
 						printf("inc 1\n");
 						printf("sto\n");
 					}
@@ -550,7 +555,9 @@ int  code_recur(treenode *root)
 						/* Minus equal assignment "-=" */
 						/* e.g. x -= 5; */
 						code_recur(root->lnode);
+						isLoadingVariable = 1;
 						code_recur(root->rnode);
+						isLoadingVariable = 0;
 						printf("dec 1\n");
 						printf("sto\n");
 					
@@ -559,7 +566,9 @@ int  code_recur(treenode *root)
 						/* Multiply equal assignment "*=" */
 						/* e.g. x *= 5; */
 						code_recur(root->lnode);
+						isLoadingVariable = 1;
 						code_recur(root->rnode);
+						isLoadingVariable = 0;
 						printf("mul\n");
 						printf("sto\n");
 					
@@ -568,7 +577,9 @@ int  code_recur(treenode *root)
 						/* Divide equal assignment "/=" */
 						/* e.g. x /= 5; */
 						code_recur(root->lnode);
+						isLoadingVariable = 1;
 						code_recur(root->rnode);
+						isLoadingVariable = 0;
 						printf("div\n");
 						printf("sto\n");
 					
@@ -585,16 +596,49 @@ int  code_recur(treenode *root)
 
 					  case INCR:
 						  /* Increment token "++" */
+                          leaf = (leafnode*)root->lnode;
+                          if( leaf != NULL) {
+                              if (leaf->hdr.type == TN_IDENT) {
+                                  printf("ldc %d\n", Find(leaf->data.sval->str));
+                              }
+                          }
+                          leaf = (leafnode*)root->rnode;
+                          if (leaf !=NULL)
+                          {
+                              if (leaf->hdr.type == TN_IDENT) {
+                                    printf("ldc %d\n", Find(leaf->data.sval->str));
+                              }
+                          }
+						  isLoadingVariable = 1;
 						  code_recur(root->lnode);
 						  code_recur(root->rnode);
+						  isLoadingVariable = 0;
 						  printf("inc 1\n");
+                          printf("sto\n");
 						  break;
 
 					  case DECR:
 						  /* Decrement token "--" */
+                          leaf = (leafnode*)root->lnode;
+                          if( leaf != NULL)
+                          {
+                              if (leaf->hdr.type == TN_IDENT) {
+                                  printf("ldc %d\n", Find(leaf->data.sval->str));
+                              }
+                          }
+                          leaf = (leafnode*)root->rnode;
+                          if (leaf !=NULL)
+                          {
+                              if (leaf->hdr.type == TN_IDENT) {
+                                  printf("ldc %d\n", Find(leaf->data.sval->str));
+                              }
+                          }
+						  isLoadingVariable = 1;
 						  code_recur(root->lnode);
 						  code_recur(root->rnode);
+						  isLoadingVariable = 0;
 						  printf("dec 1\n");
+						  printf("sto\n");
 						  break;
 
 					  case PLUS:
@@ -608,7 +652,18 @@ int  code_recur(treenode *root)
 					  	  /* Minus token "-" */
 						  code_recur(root->lnode);
 						  code_recur(root->rnode);
-						  printf("sub\n");
+						  leaf = (leafnode*)root->lnode;
+
+						  if (leaf != NULL)
+                          {
+                              printf("sub\n");
+						  }
+
+						  else
+                          {
+						      printf("neg\n");
+                          }
+
 						  break;
 
 					  case DIV:
@@ -627,64 +682,82 @@ int  code_recur(treenode *root)
 
 					  case AND:
 					  	  /* And token "&&" */
+					  	  isLoadingVariable = 1;
 						  code_recur(root->lnode);
 						  code_recur(root->rnode);
+						  isLoadingVariable = 0;
 						  printf("and\n");
 						  break;
 
 					  case OR:
 					  	  /* Or token "||" */
+					  	  isLoadingVariable = 1;
 						  code_recur(root->lnode);
 						  code_recur(root->rnode);
+						  isLoadingVariable = 0;
 						  printf("or\n");
 						  break;
 						
 					  case NOT:
 					  	  /* Not token "!" */
+					  	  isLoadingVariable = 1;
 						  code_recur(root->lnode);
 						  code_recur(root->rnode);
+						  isLoadingVariable = 0;
 						  printf("not\n");
 						  break;
 
 					  case GRTR:
 					  	  /* Greater token ">" */
+					  	  isLoadingVariable = 1;
 						  code_recur(root->lnode);
 						  code_recur(root->rnode);
+						  isLoadingVariable = 0;
 						  printf("grt\n");
 						  break;
 
 					  case LESS:
 					  	  /* Less token "<" */
-						  code_recur(root->lnode);
-						  code_recur(root->rnode);
+                          isLoadingVariable = 1;
+                          code_recur(root->lnode);
+                          code_recur(root->rnode);
+                          isLoadingVariable = 0;
 						  printf("les\n");
 						  break;
 						  
 					  case EQUAL:
 					  	  /* Equal token "==" */
+					  	  isLoadingVariable = 1;
 						  code_recur(root->lnode);
 						  code_recur(root->rnode);
+						  isLoadingVariable = 0;
 						  printf("equ\n");
 						  break;
 
 					  case NOT_EQ:
 					  	  /* Not equal token "!=" */
+					  	  isLoadingVariable = 1;
 						  code_recur(root->lnode);
 						  code_recur(root->rnode);
+						  isLoadingVariable = 0;
 						  printf("neq\n");
 						  break;
 
 					  case LESS_EQ:
 					  	  /* Less or equal token "<=" */
+					  	  isLoadingVariable = 1;
 						  code_recur(root->lnode);
 						  code_recur(root->rnode);
+						  isLoadingVariable = 0;
 						  printf("leq\n");
 						  break;
 
 					  case GRTR_EQ:
 					  	  /* Greater or equal token ">=" */
+					  	  isLoadingVariable = 1;
 						  code_recur(root->lnode);
 						  code_recur(root->rnode);
+						  isLoadingVariable = 0;
 						  printf("geq\n");
 						  break;
 
@@ -696,16 +769,23 @@ int  code_recur(treenode *root)
 					break;
 
 				case TN_WHILE:
-					/* While case */
-					code_recur(root->lnode);
-					code_recur(root->rnode);
+				    printf("while_loop:\n");
+                    code_recur(root->lnode);
+                    printf("fjp end_loop\n");
+                    code_recur(root->rnode);
+                    printf("ujp while_loop\n");
+                    printf("end_loop:\n");
 					break;
 
 				case TN_DOWHILE:
-					/* Do-While case */
-					code_recur(root->rnode);
-					code_recur(root->lnode);
-					break;
+                    /* Do-While case */
+                    printf("do_while_loop:\n");
+                    code_recur(root->rnode);
+                    code_recur(root->lnode);
+                    printf("fjp end_loop\n");
+                    printf("ujp do_while_loop\n");
+                    printf("end_loop:\n");
+                    break;
 
 				case TN_LABEL:
 					code_recur(root->lnode);
@@ -730,7 +810,7 @@ int  code_recur(treenode *root)
 /*
 *	This function prints all the variables on your symbol table with their data
 *	Input: treenode (AST)
-*	Output: prints the Sumbol Table on the console
+*	Output: prints the Symbol Table on the console
 */
 void print_symbol_table(treenode *root) {
 	printf("---------------------------------------\n");
