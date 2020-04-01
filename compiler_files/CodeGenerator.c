@@ -199,37 +199,41 @@ int  code_recur(treenode *root)
 
 		case IF_T:
 			ifn = (if_node *) root;
-			switch (ifn->hdr.type) {
+            int loop_level;
+            switch (ifn->hdr.type) {
 
 			case TN_IF:
 				if (ifn->else_n == NULL) {
-					/* if case (without else)*/
+                    loop_level = root->hdr.c_contxt->syms->clevel;
+                    /* if case (without else)*/
 					code_recur(ifn->cond);
-					printf("fjp end\n");
+					printf("fjp end_if_%i\n",loop_level);
 					code_recur(ifn->then_n);
-					printf("end:\n");
+					printf("end_if_%i:\n",loop_level);
 				}
 				else {
+                    loop_level = root->hdr.c_contxt->syms->clevel;
 					/* if - else case*/ 
 					code_recur(ifn->cond);
-					printf("fjp else\n");
+					printf("fjp else_%i\n",loop_level);
 					code_recur(ifn->then_n);
-					printf("ujp end\n");
-					printf("else:\n");
+					printf("ujp end_if_%i\n",loop_level);
+					printf("else_%i:\n",loop_level);
 					code_recur(ifn->else_n);
-					printf("end:\n");
+					printf("end_if_%i:\n",loop_level);
 				}
 				break;
 				
 			case TN_COND_EXPR:
+                loop_level = root->hdr.c_contxt->syms->clevel;
 				/* (cond)?(exp):(exp); */
 				code_recur(ifn->cond);
-				printf("fjp else\n");
+				printf("fjp else_%i\n",loop_level);
 				code_recur(ifn->then_n);
-				printf("ujp end\n");
-				printf("else:\n");
+				printf("ujp end_cond_%i\n",loop_level);
+				printf("else_%i:\n",loop_level);
 				code_recur(ifn->else_n);
-				printf("end:\n");
+				printf("end_cond_%i:\n",loop_level);
 				break;
 
 			default:
@@ -258,10 +262,15 @@ int  code_recur(treenode *root)
 				/* For case*/
 				/* e.g. for(i=0;i<5;i++) { ... } */
 				/* Look at the output AST structure! */
+                loop_level = root->hdr.c_contxt->syms->clevel;
 				code_recur(forn->init);
+				printf("for_loop_%i:\n",loop_level);
 				code_recur(forn->test);
+				printf("fjp end_for_%i\n",loop_level);
 				code_recur(forn->stemnt);
 				code_recur(forn->incr);
+                printf("ujp for_loop_%i\n",loop_level);
+                printf("end_for_%i:\n",loop_level);
 				break;
 
 			default:
@@ -768,23 +777,26 @@ int  code_recur(treenode *root)
 					}
 					break;
 
-				case TN_WHILE:
-				    printf("while_loop:\n");
+
+                case TN_WHILE:
+                    loop_level = root->hdr.c_contxt->syms->clevel;
+				    printf("while_loop_%i:\n",loop_level);
                     code_recur(root->lnode);
-                    printf("fjp end_loop\n");
+                    printf("fjp end_loop_%i\n",loop_level);
                     code_recur(root->rnode);
-                    printf("ujp while_loop\n");
-                    printf("end_loop:\n");
+                    printf("ujp while_loop_%i\n",loop_level);
+                    printf("end_loop_%i:\n",loop_level);
 					break;
 
 				case TN_DOWHILE:
                     /* Do-While case */
-                    printf("do_while_loop:\n");
+                    loop_level = root->hdr.c_contxt->syms->clevel;
+                    printf("do_while_loop_%i:\n",loop_level);
                     code_recur(root->rnode);
                     code_recur(root->lnode);
-                    printf("fjp end_loop\n");
-                    printf("ujp do_while_loop\n");
-                    printf("end_loop:\n");
+                    printf("fjp end_loop_%i\n",loop_level);
+                    printf("ujp do_while_loop_%i\n",loop_level);
+                    printf("end_loop_%i:\n",loop_level);
                     break;
 
 				case TN_LABEL:
