@@ -93,6 +93,20 @@ void Remove(char name)
         ptr = ptr->next;
     }
 }
+
+void FreeSymbolTableMemory(Variable* Head)
+{
+    Variable* ptr = head;
+    Symbol_table* tmpTable;
+    while (ptr->next != NULL)
+    {
+        Remove(ptr->table->name);
+    }
+
+    tmpTable = ptr->table;
+    free(tmpTable);
+    free(ptr);
+}
 /*
 *	You need to build a data structure for the symbol table
 *	I recommend to use linked list.
@@ -387,11 +401,12 @@ int  code_recur(treenode *root)
 					code_recur(root->rnode);
 					break;
 					
-				case TN_DECL:
-                    tmp = (Symbol_table*)malloc(sizeof(Symbol_table));
+			    case TN_DECL:
+				    tmp = (Symbol_table*)malloc(sizeof(Symbol_table));
+                    leaf =(leafnode*)root->rnode;
                     code_recur(root->lnode);
                     code_recur(root->rnode);
-                    leaf =(leafnode*)root->rnode;
+
                     tmp->name = leaf->data.sval->str;
                     leaf = (leafnode*)root->lnode->lnode;
                     if (leaf->hdr.tok == INT)
@@ -493,6 +508,8 @@ int  code_recur(treenode *root)
 						/* return jump - for HW2! */
 						code_recur(root->lnode);
 						code_recur(root->rnode);
+						// In normal case we can't release memory here
+                        FreeSymbolTableMemory(head);
 					}
 					else if (root->hdr.tok == BREAK) {
 						/* break jump - for HW2! */
@@ -829,5 +846,9 @@ void print_symbol_table(treenode *root) {
 	printf("Showing the Symbol Table:\n");
 	/*
 	*	add your code here
+	 *	What is needed to be done is to traverse the tree like in Code_recur but without the prints
+	 *	And without deleting the table in the return case
+	 *	After that was done we need to go over the symbol table and print everything that is needed
 	*/
+
 }

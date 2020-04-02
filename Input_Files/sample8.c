@@ -9,6 +9,7 @@ void main() {
 	j = 5;
 	k = 3;
 	while (i >= 0) {
+	    int r = 0;
 		k = k + 2;
 		if (k > i) {
 			while (j <= 10) {
@@ -17,10 +18,11 @@ void main() {
 			}
 		}
 		else {
-			k = k - 1;
-		};
+            k = k - 1;
+        }
 		i = i - 1;
 		printf("%.2f\n", i);
 	}
+	r=9;
 	return;
 }
