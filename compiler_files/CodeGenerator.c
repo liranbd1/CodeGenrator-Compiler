@@ -114,7 +114,6 @@ void FreeSymbolTableMemory(Variable* Head)
 *	You also need to build some functions that add/remove/find element in the symbol table
 */
 
-
 /*
 *	This recursive function is the main method for Code Generation
 *	Input: treenode (AST)
@@ -126,7 +125,7 @@ int  code_recur(treenode *root)
 	for_node *forn;
 	leafnode *leaf;
 	int addressOfVariable;
-				
+
     if (!root)
         return SUCCESS;
 
@@ -137,7 +136,7 @@ int  code_recur(treenode *root)
 				case TN_LABEL:
 					/* Maybe you will use it later */
 					break;
-				
+
 				case TN_IDENT:
 					/* variable case */
 					/*
@@ -561,9 +560,33 @@ int  code_recur(treenode *root)
 					if(root->hdr.tok == EQ){
 						/* Regular assignment "=" */
 						/* e.g. x = 5; */
+
 						code_recur(root->lnode);
 						isLoadingVariable = 1;
-						code_recur(root->rnode);
+                        leaf = (leafnode*)root->rnode;
+                        if ((leaf->hdr.tok == INCR) || (leaf->hdr.tok == DECR))
+                        {
+                            leaf = (leafnode*)root->rnode->rnode;
+                            if (leaf != NULL)
+                            {
+                                printf("ldc %d\n", Find(leaf->data.sval->str));
+                                printf("ind\n");
+                                printf("sto\n");
+                            }
+                        }
+
+                        code_recur(root->rnode);
+						leaf = (leafnode*)root->rnode;
+                        if ((leaf->hdr.tok == INCR) || (leaf->hdr.tok == DECR))
+                        {
+                            leaf = (leafnode*)root->rnode->lnode;
+                            if (leaf != NULL)
+                            {
+                                printf("ldc %d\n", Find(leaf->data.sval->str));
+                                printf("ind\n");
+                            }
+
+                        }
 						isLoadingVariable = 0;
 						printf("sto\n");
 					}
@@ -624,48 +647,61 @@ int  code_recur(treenode *root)
 						  /* Increment token "++" */
                           leaf = (leafnode*)root->lnode;
                           if( leaf != NULL) {
-                              if (leaf->hdr.type == TN_IDENT) {
+                              if (leaf->hdr.type == TN_IDENT)
+                              {
+                                  isLoadingVariable = 1;
                                   printf("ldc %d\n", Find(leaf->data.sval->str));
+                                  code_recur(root->lnode);
+                                  isLoadingVariable = 0;
+                                  printf("inc 1\n");
+                                  printf("sto\n");
                               }
                           }
                           leaf = (leafnode*)root->rnode;
                           if (leaf !=NULL)
                           {
                               if (leaf->hdr.type == TN_IDENT) {
-                                    printf("ldc %d\n", Find(leaf->data.sval->str));
+                                  isLoadingVariable = 1;
+                                  printf("ldc %d\n", Find(leaf->data.sval->str));
+                                  code_recur(root->rnode);
+                                  isLoadingVariable = 0;
+                                  printf("inc 1\n");
+                                  printf("sto\n");
                               }
                           }
-						  isLoadingVariable = 1;
-						  code_recur(root->lnode);
-						  code_recur(root->rnode);
-						  isLoadingVariable = 0;
-						  printf("inc 1\n");
-                          printf("sto\n");
+
 						  break;
 
 					  case DECR:
 						  /* Decrement token "--" */
                           leaf = (leafnode*)root->lnode;
-                          if( leaf != NULL)
-                          {
-                              if (leaf->hdr.type == TN_IDENT) {
-                                  printf("ldc %d\n", Find(leaf->data.sval->str));
-                              }
-                          }
-                          leaf = (leafnode*)root->rnode;
-                          if (leaf !=NULL)
-                          {
-                              if (leaf->hdr.type == TN_IDENT) {
-                                  printf("ldc %d\n", Find(leaf->data.sval->str));
-                              }
-                          }
-						  isLoadingVariable = 1;
-						  code_recur(root->lnode);
-						  code_recur(root->rnode);
-						  isLoadingVariable = 0;
-						  printf("dec 1\n");
-						  printf("sto\n");
-						  break;
+                            if( leaf != NULL) {
+                                if (leaf->hdr.type == TN_IDENT)
+                                {
+                                    isLoadingVariable = 1;
+                                    printf("ldc %d\n", Find(leaf->data.sval->str));
+                                    code_recur(root->lnode);
+                                    isLoadingVariable = 0;
+                                    code_recur(root->rnode);
+                                    printf("dec 1\n");
+                                    printf("sto\n");
+                                }
+                            }
+
+                            leaf = (leafnode*)root->rnode;
+                            if (leaf !=NULL)
+                            {
+                                if (leaf->hdr.type == TN_IDENT) {
+                                    isLoadingVariable = 1;
+                                    code_recur(root->lnode);
+                                    printf("ldc %d\n", Find(leaf->data.sval->str));
+                                    code_recur(root->rnode);
+                                    isLoadingVariable = 0;
+                                    printf("dec 1\n");
+                                    printf("sto\n");
+                                }
+                            }
+                            break;
 
 					  case PLUS:
 					  	  /* Plus token "+" */

@@ -17,5 +17,4 @@ add_executable(c_compiler_test
         compiler_files/treestk.c
         compiler_files/dsm_extension.c
         compiler_files/lexer.c
-        compiler_files/gram.c
-        )
+        compiler_files/gram.c)
