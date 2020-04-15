@@ -142,7 +142,7 @@ typedef unsigned int flex_uint32_t;
 /* Size of default input buffer. */
 #ifndef YY_BUF_SIZE
 #ifdef __ia64__
-/* On IA-64, the buffer size is 16k, not 8k.
+/* On IA-64, the buffer varSize is 16k, not 8k.
  * Moreover, YY_BUF_SIZE is 2*YY_READ_BUF_SIZE in the general case.
  * Ditto for the __ia64__ case accordingly.
  */
@@ -1119,7 +1119,7 @@ static int input (void );
 /* Amount of stuff to slurp up with each read. */
 #ifndef YY_READ_BUF_SIZE
 #ifdef __ia64__
-/* On IA-64, the buffer size is 16k, not 8k */
+/* On IA-64, the buffer varSize is 16k, not 8k */
 #define YY_READ_BUF_SIZE 16384
 #else
 #define YY_READ_BUF_SIZE 8192
@@ -3261,7 +3261,7 @@ static void yy_load_buffer_state  (void)
 
 /** Allocate and initialize an input buffer state.
  * @param file A readable stream.
- * @param size The character buffer size in bytes. When in doubt, use @c YY_BUF_SIZE.
+ * @param size The character buffer varSize in bytes. When in doubt, use @c YY_BUF_SIZE.
  * 
  * @return the allocated buffer state.
  */
@@ -3275,7 +3275,7 @@ static void yy_load_buffer_state  (void)
 
 	b->yy_buf_size = (yy_size_t)size;
 
-	/* yy_ch_buf has to be 2 characters longer than the size given because
+	/* yy_ch_buf has to be 2 characters longer than the varSize given because
 	 * we need to put in 2 end-of-buffer characters.
 	 */
 	b->yy_ch_buf = (char *) yyalloc(b->yy_buf_size + 2  );
@@ -3445,7 +3445,7 @@ static void yyensure_buffer_stack (void)
 	if ((yy_buffer_stack_top) >= ((yy_buffer_stack_max)) - 1){
 
 		/* Increase the buffer to prepare for a possible push. */
-		yy_size_t grow_size = 8 /* arbitrary grow size */;
+		yy_size_t grow_size = 8 /* arbitrary grow varSize */;
 
 		num_to_alloc = (yy_buffer_stack_max) + grow_size;
 		(yy_buffer_stack) = (struct yy_buffer_state**)yyrealloc
@@ -3463,7 +3463,7 @@ static void yyensure_buffer_stack (void)
 
 /** Setup the input buffer state to scan directly from a user-specified character buffer.
  * @param base the character buffer
- * @param size the size in bytes of the character buffer
+ * @param size the varSize in bytes of the character buffer
  * 
  * @return the newly allocated buffer state object. 
  */

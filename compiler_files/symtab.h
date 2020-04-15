@@ -108,7 +108,7 @@ int   is_enum_const    ARGS((symentry_t *));
 #define    INIT_HASHTAB_SIZE    (5)
 
 typedef struct hashtab {
-    int            tsize;     /* The current size of the table. */
+    int            tsize;     /* The current varSize of the table. */
     int            nent;      /* The number of entries being stored. */
     symentry_t   **tab;       /* The table. */
 } hashtab_t;

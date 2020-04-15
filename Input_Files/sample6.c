@@ -1,13 +1,11 @@
 #include <stdio.h>
 
 void main() {
-	double a;
-
-	a = 5.5;
-	printf("%d\n", !5.18);
-	printf("%d\n",(((a < 6.0) || (a > 7.0)) && (a == 6.0)) || 0);
-	printf("%d\n",(((a <= 6.0) || (a >= 7.0)) && (a != 6.0)) || 8.8);
-	printf("%.2f\n", - a);
-	printf("%.2f\n", ((a + 6.5) - 6.5) * 6.5 / 6.5);
-	return;
+    int a;
+    int b[5][3][1];
+    b[0][0][0] = 3;
+    b[0][0][0]++;
+    a = b[0][0][0]++;
+    printf("%d\n",a);
+    return;
 }

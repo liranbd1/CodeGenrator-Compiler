@@ -37,7 +37,7 @@ BEGIN_HEADER
      the useful minimum.  Now that there are 64-bit
      MIPS, PowerPC, and SPARC systems as well as
      Alphas, we can no longer tolerate all-the-world's-a-VAX.
-     We DO assume that all pointers are the same size;
+     We DO assume that all pointers are the same varSize;
      which is KNOWN to be false in several C systems.
     8 byte alignment will do no harm on 32-bit machines.
 */

@@ -151,7 +151,7 @@ void   *avail, *pnt;
 
             if (heap->num_hunks == heap->hunk_array_sze){
 
-                    /* Double array size */
+                    /* Double array varSize */
                 asze = heap->hunk_array_sze * 2;
                 if ((pnt = (void *) malloc(asze * PNTR_SZE)) == NULL)
                     return(HeapErr(fail));

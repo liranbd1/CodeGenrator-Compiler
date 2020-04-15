@@ -436,7 +436,7 @@ typedef short int yytype_int16;
 #  define YYSTACK_FREE(Ptr) do { /* empty */; } while (0)
 #  ifndef YYSTACK_ALLOC_MAXIMUM
     /* The OS might guarantee only one guard page at the bottom of the stack,
-       and a page size can be as small as 4096 bytes.  So we cannot safely
+       and a page varSize can be as small as 4096 bytes.  So we cannot safely
        invoke alloca (N) if N exceeds 4096.  Use a slightly smaller number
        to allow for a few compiler-allocated temporary stack slots.  */
 #   define YYSTACK_ALLOC_MAXIMUM 4032 /* reasonable circa 2006 */
@@ -482,10 +482,10 @@ union yyalloc
   YYSTYPE yyvs_alloc;
 };
 
-/* The size of the maximum gap between one aligned stack and the next.  */
+/* The varSize of the maximum gap between one aligned stack and the next.  */
 # define YYSTACK_GAP_MAXIMUM (sizeof (union yyalloc) - 1)
 
-/* The size of an array large to enough to hold all stacks, each with
+/* The varSize of an array large to enough to hold all stacks, each with
    N elements.  */
 # define YYSTACK_BYTES(N) \
      ((N) * (sizeof (yytype_int16) + sizeof (YYSTYPE)) \
@@ -1403,12 +1403,12 @@ int yydebug;
 #endif /* !YYDEBUG */
 
 
-/* YYINITDEPTH -- initial size of the parser's stacks.  */
+/* YYINITDEPTH -- initial varSize of the parser's stacks.  */
 #ifndef YYINITDEPTH
 # define YYINITDEPTH 200
 #endif
 
-/* YYMAXDEPTH -- maximum size the stacks can grow to (effective only
+/* YYMAXDEPTH -- maximum varSize the stacks can grow to (effective only
    if the built-in stack extension method is used).
 
    Do not make this value too large; the results are undefined if
@@ -1506,7 +1506,7 @@ yytnamerr (char *yyres, const char *yystr)
 }
 # endif
 
-/* Copy into *YYMSG, which is of size *YYMSG_ALLOC, an error message
+/* Copy into *YYMSG, which is of varSize *YYMSG_ALLOC, an error message
    about the unexpected token YYTOKEN for the state stack whose top is
    YYSSP.
 
@@ -1714,7 +1714,7 @@ YYSTYPE yylval YY_INITIAL_VALUE (= yyval_default);
   YYSTYPE yyval;
 
 #if YYERROR_VERBOSE
-  /* Buffer for error messages, and its allocated size.  */
+  /* Buffer for error messages, and its allocated varSize.  */
   char yymsgbuf[128];
   char *yymsg = yymsgbuf;
   YYSIZE_T yymsg_alloc = sizeof yymsgbuf;
@@ -1751,7 +1751,7 @@ YYSTYPE yylval YY_INITIAL_VALUE (= yyval_default);
 
   if (yyss + yystacksize - 1 <= yyssp)
     {
-      /* Get the current used size of the three stacks, in elements.  */
+      /* Get the current used varSize of the three stacks, in elements.  */
       YYSIZE_T yysize = yyssp - yyss + 1;
 
 #ifdef yyoverflow
@@ -1762,7 +1762,7 @@ YYSTYPE yylval YY_INITIAL_VALUE (= yyval_default);
         YYSTYPE *yyvs1 = yyvs;
         yytype_int16 *yyss1 = yyss;
 
-        /* Each stack pointer address is followed by the size of the
+        /* Each stack pointer address is followed by the varSize of the
            data in use in that stack, in bytes.  This used to be a
            conditional around just the two extra args, but that might
            be undefined if yyoverflow is a macro.  */
@@ -1803,7 +1803,7 @@ YYSTYPE yylval YY_INITIAL_VALUE (= yyval_default);
       yyssp = yyss + yysize - 1;
       yyvsp = yyvs + yysize - 1;
 
-      YYDPRINTF ((stderr, "Stack size increased to %lu\n",
+      YYDPRINTF ((stderr, "Stack varSize increased to %lu\n",
                   (unsigned long int) yystacksize));
 
       if (yyss + yystacksize - 1 <= yyssp)

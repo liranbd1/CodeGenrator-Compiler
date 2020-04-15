@@ -242,7 +242,7 @@ show_hashtab(hashtab_t *that, FILE *fp)
   int j;
   symentry_t *list;
 
-  fprintf(fp, "HashTab:  nent: %d  size: %d\n",
+  fprintf(fp, "HashTab:  nent: %d  varSize: %d\n",
               that->nent, that->tsize );
 
   for (j=0; j < that->tsize; j++)
