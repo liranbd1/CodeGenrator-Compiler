@@ -1,5 +1,4 @@
 #include	"CodeGenerator.h"
-#include "tree.h"
 
 typedef struct array_table {
 
@@ -16,6 +15,8 @@ typedef struct symbol_table {
     int address;
     int varSize;
     Array_table* arrayTable;
+    int isArray;
+    int pointerSize;
 
 } Symbol_table;
 
@@ -32,7 +33,6 @@ typedef struct variable {
 
 char* tmpName;
 char* tmpType;
-int tmpAddress;
 int tmpSize;
 int tmpArraySize;
 Variable *head;
@@ -40,9 +40,13 @@ int isLoadingVariable = 0;
 int loop_level = 0;
 int tmpArrayDim = 0;
 int* tmpArrayDimSizes = NULL;
-int tmpArraySize;
 int arrayCounter = 0;
 Symbol_table *pVariable = NULL;
+int isPointer = 0;
+int tmpIsArray = 0;
+int isAssaigment = 0;
+int tmpPointerSize = 0;
+int isDereferance = 0;
 
 Symbol_table* Find (const char* name)
 {
@@ -120,6 +124,12 @@ void FreeSymbolTableMemory(Variable* Head)
     Symbol_table* tmpTable;
     while (ptr->next != NULL)
     {
+        if (ptr->table->isArray)
+        {
+            free(ptr->table->arrayTable->dimSize);
+            free(ptr->table->arrayTable);
+        }
+
         free(ptr->table);
         Variable* tmp = ptr;
         ptr = ptr->next;
@@ -127,8 +137,22 @@ void FreeSymbolTableMemory(Variable* Head)
     }
 
     tmpTable = ptr->table;
+    if (tmpTable->isArray)
+    {
+        free(tmpTable->arrayTable->dimSize);
+        free(tmpTable->arrayTable);
+    }
     free(tmpTable);
     free(ptr);
+    free(head);
+}
+
+void ClearData()
+{
+    tmpSize = 0;
+    tmpName = "";
+    tmpType = "";
+    tmpPointerSize = 0;
 }
 /*
 *	You need to build a data structure for the symbol table
@@ -176,6 +200,17 @@ int  code_recur(treenode *root)
                     {
                         printf("ind\n");
                     }
+
+                    if (isDereferance)
+                    {
+                        tmpPointerSize = pVariable->pointerSize;
+                        while (tmpPointerSize > 0)
+                        {
+                            printf("ind\n");
+                            tmpPointerSize--;
+                        }
+                    }
+
                 } else{
 				   tmpName = leaf->data.sval->str;
 				}
@@ -359,8 +394,9 @@ int  code_recur(treenode *root)
 						/* The expression that you need to print is located in */
 						/* the currentNode->right->right sub tree */
 						/* Look at the output AST structure! */
+						isLoadingVariable = 1;
 						code_recur(root->rnode->rnode);
-						printf("ind\n");
+						isLoadingVariable = 0;
 						printf("print\n");
 					}
 					else {
@@ -451,6 +487,7 @@ int  code_recur(treenode *root)
 			        tmpSymbolTable->name = tmpName;
 			        tmpSymbolTable->type = tmpType;
 			        tmpSymbolTable->varSize = tmpSize;
+                    tmpSymbolTable->pointerSize = tmpPointerSize;
 			        leaf = (leafnode*)root->rnode;
 			        if(leaf->hdr.type == TN_ARRAY_DECL)
                     {
@@ -458,12 +495,23 @@ int  code_recur(treenode *root)
 			            tmpSymbolTable->arrayTable->dimensions = tmpArrayDim;
 			            tmpSymbolTable->arrayTable->dimSize = tmpArrayDimSizes;
 			            tmpSymbolTable->arrayTable->typeSize = 1;
+			            tmpIsArray = 1;
 			            tmpArrayDim = 0;
+			            free(tmpArrayDimSizes);
 			            tmpArrayDimSizes = NULL;
 			            arrayCounter = 0;
                     }
-			        Add(tmpSymbolTable);
-			        break;
+			        tmpSymbolTable->isArray = tmpIsArray;
+			        tmpIsArray = 0;
+			        if (!isPointer)
+                    {
+                        Add(tmpSymbolTable);
+                        ClearData();
+                    } else
+                    {
+			            isPointer = 0;
+                    }
+                    break;
 
 				case TN_DECL_LIST:
 					/* Maybe you will use it later */
@@ -497,6 +545,8 @@ int  code_recur(treenode *root)
 
 				case TN_PNTR:
 					/* pointer - for HW2! */
+					isPointer = 1;
+					tmpPointerSize++;
 					code_recur(root->lnode);
 					code_recur(root->rnode);
 					break;
@@ -591,8 +641,10 @@ int  code_recur(treenode *root)
 
 				case TN_DEREF:
 					/* pointer derefrence - for HW2! */
+					isDereferance = 1;
 					code_recur(root->lnode);
 					code_recur(root->rnode);
+					isDereferance = 0;
 					break;
 
 				case TN_SELECT:
@@ -615,16 +667,21 @@ int  code_recur(treenode *root)
 					if(root->hdr.tok == EQ){
 						/* Regular assignment "=" */
 						/* e.g. x = 5; */
+						isAssaigment = 1;
 						code_recur(root->lnode); //Going to left son we only need to load the address here.
 						code_recur(root->rnode);
 
 						leaf = (leafnode*)root->rnode;
-						if ((leaf->hdr.type != TN_REAL)&&(leaf->hdr.type != TN_INT))
+						/*if ((leaf->hdr.type != TN_REAL)&&(leaf->hdr.type != TN_INT))
                         {
-						    printf("ind\n");
-                        }
+						    if (!isPointer) {
+                                printf("ind\n");
+                            }
+                        }*/
 						printf("sto\n");
-					}
+                        isPointer = 0;
+                        isAssaigment = 0;
+                    }
 					else if (root->hdr.tok == PLUS_EQ){
 						/* Plus equal assignment "+=" */
 						/* e.g. x += 5; */
@@ -686,23 +743,30 @@ int  code_recur(treenode *root)
                           if( leaf != NULL) {
 //                              printf("ldc %d\n", Find(leaf->data.sval->str)->address);
                               code_recur(root->lnode);
-                              code_recur(root->lnode);
-                              printf("ind\n");
-                              printf("inc 1\n");
-                              printf("sto\n");
+                              isLoadingVariable = 1;
                               code_recur(root->lnode);
                               //printf("ind\n");
-
+                              printf("inc 1\n");
+                              printf("sto\n");
+                              if (isAssaigment)
+                              {
+                                  code_recur(root->lnode);
+                              }
+                              isLoadingVariable = 0;
                           }
                           leaf = (leafnode*)root->rnode;
                           if (leaf !=NULL) {
-
+                              if (isAssaigment)
+                              {
+                                isLoadingVariable = 1;
+                                code_recur(root->rnode);
+                                isLoadingVariable = 0;
+                                printf("sto\n");
+                              }
                               code_recur(root->rnode);
-                              printf("ind\n");
-                              printf("sto\n");
+                              isLoadingVariable = 1;
                               code_recur(root->rnode);
-                              code_recur(root->rnode);
-                              printf("ind\n");
+                              isLoadingVariable = 0;
                               printf("inc 1\n");
                               printf("sto\n");
 
@@ -716,23 +780,31 @@ int  code_recur(treenode *root)
                             if( leaf != NULL) {
 //                              printf("ldc %d\n", Find(leaf->data.sval->str)->address);
                                 code_recur(root->lnode);
+                                isLoadingVariable = 1;
                                 code_recur(root->lnode);
-                                printf("ind\n");
                                 printf("dec 1\n");
                                 printf("sto\n");
-                                code_recur(root->lnode);
-                                //printf("ind\n");
+                                if (isAssaigment)
+                                {
+                                    code_recur(root->lnode);
+                                }
+                                isLoadingVariable = 0;
 
                             }
                             leaf = (leafnode*)root->rnode;
                             if (leaf !=NULL) {
 
+                                if (isAssaigment)
+                                {
+                                    isLoadingVariable = 1;
+                                    code_recur(root->rnode);
+                                    isLoadingVariable = 0;
+                                    printf("sto\n");
+                                }
                                 code_recur(root->rnode);
-                                printf("ind\n");
-                                printf("sto\n");
+                                isLoadingVariable = 1;
                                 code_recur(root->rnode);
-                                code_recur(root->rnode);
-                                printf("ind\n");
+                                isLoadingVariable = 0;
                                 printf("dec 1\n");
                                 printf("sto\n");
 
@@ -741,15 +813,19 @@ int  code_recur(treenode *root)
 
 					  case PLUS:
 					  	  /* Plus token "+" */
-						  code_recur(root->lnode);
+                          isLoadingVariable = 1;
+                          code_recur(root->lnode);
 						  code_recur(root->rnode);
+						  isLoadingVariable = 0;
 						  printf("add\n");
 						  break;
 
 					  case MINUS:
 					  	  /* Minus token "-" */
+					  	  isLoadingVariable = 1;
 						  code_recur(root->lnode);
 						  code_recur(root->rnode);
+						  isLoadingVariable = 0;
 						  leaf = (leafnode*)root->lnode;
 
 						  if (leaf != NULL)
@@ -766,15 +842,19 @@ int  code_recur(treenode *root)
 
 					  case DIV:
 					  	  /* Divide token "/" */
+					  	  isLoadingVariable = 1;
 						  code_recur(root->lnode);
 						  code_recur(root->rnode);
+						  isLoadingVariable = 0;
 						  printf("div\n");
 						  break;
 
 					  case STAR:
 					  	  /* multiply token "*" */
+					  	  isLoadingVariable = 1;
 						  code_recur(root->lnode);
 						  code_recur(root->rnode);
+						  isLoadingVariable = 0;
 						  printf("mul\n");
 						  break;
 
@@ -858,6 +938,12 @@ int  code_recur(treenode *root)
 						  isLoadingVariable = 0;
 						  printf("geq\n");
 						  break;
+
+						  case B_AND:
+						      code_recur(root->lnode);
+						      code_recur(root->rnode);
+						      isPointer = 1;
+                            break;
 
 					  default:
 						code_recur(root->lnode);
