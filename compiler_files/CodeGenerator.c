@@ -16,8 +16,6 @@ typedef struct symbol_table {
     int varSize;
     Array_table* arrayTable;
     int isArray;
-    int pointerSize;
-
 } Symbol_table;
 
 typedef struct variable {
@@ -47,6 +45,7 @@ int tmpIsArray = 0;
 int isAssaigment = 0;
 int tmpPointerSize = 0;
 int isDereferance = 0;
+int derefLoop = 0;
 
 Symbol_table* Find (const char* name)
 {
@@ -203,11 +202,11 @@ int  code_recur(treenode *root)
 
                     if (isDereferance)
                     {
-                        tmpPointerSize = pVariable->pointerSize;
-                        while (tmpPointerSize > 0)
+                        derefLoop = tmpPointerSize;
+                        while (derefLoop > 0)
                         {
                             printf("ind\n");
-                            tmpPointerSize--;
+                            derefLoop--;
                         }
                     }
 
@@ -487,7 +486,6 @@ int  code_recur(treenode *root)
 			        tmpSymbolTable->name = tmpName;
 			        tmpSymbolTable->type = tmpType;
 			        tmpSymbolTable->varSize = tmpSize;
-                    tmpSymbolTable->pointerSize = tmpPointerSize;
 			        leaf = (leafnode*)root->rnode;
 			        if(leaf->hdr.type == TN_ARRAY_DECL)
                     {
@@ -642,6 +640,7 @@ int  code_recur(treenode *root)
 				case TN_DEREF:
 					/* pointer derefrence - for HW2! */
 					isDereferance = 1;
+					tmpPointerSize++;
 					code_recur(root->lnode);
 					code_recur(root->rnode);
 					isDereferance = 0;
