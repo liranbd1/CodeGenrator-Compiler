@@ -46,6 +46,8 @@ int isAssaigment = 0;
 int tmpPointerSize = 0;
 int isDereferance = 0;
 int derefLoop = 0;
+int scope_counter = 0;
+int prev_scope;
 
 Symbol_table* Find (const char* name)
 {
@@ -128,13 +130,11 @@ void FreeSymbolTableMemory(Variable* Head)
             free(ptr->table->arrayTable->dimSize);
             free(ptr->table->arrayTable);
         }
-
         free(ptr->table);
         Variable* tmp = ptr;
         ptr = ptr->next;
         free(tmp);
     }
-
     tmpTable = ptr->table;
     if (tmpTable->isArray)
     {
@@ -270,47 +270,41 @@ int  code_recur(treenode *root)
 
 		case IF_T:
 			ifn = (if_node *) root;
-            //int loop_level;
+			prev_scope=loop_level;
+			loop_level=scope_counter++;
             switch (ifn->hdr.type) {
 
 			case TN_IF:
 				if (ifn->else_n == NULL) {
-              //      loop_level = root->hdr.c_contxt->syms->clevel;
                     /* if case (without else)*/
-					loop_level++;
 					code_recur(ifn->cond);
-					printf("fjp end_if_%i\n",loop_level);
+					printf("fjp end_%i\n",loop_level);
 					code_recur(ifn->then_n);
-					printf("end_if_%i:\n",loop_level);
+					printf("end_%i:\n",loop_level);
 
 				}
 				else {
-                    //loop_level = root->hdr.c_contxt->syms->clevel;
 					/* if - else case*/
-					loop_level++;
 					code_recur(ifn->cond);
 					printf("fjp else_%i\n",loop_level);
 					code_recur(ifn->then_n);
-					printf("ujp end_if_%i\n",loop_level);
+					printf("ujp end_%i\n",loop_level);
 					printf("else_%i:\n",loop_level);
 					code_recur(ifn->else_n);
-					printf("end_if_%i:\n",loop_level);
+					printf("end_%i:\n",loop_level);
 
 				}
 				break;
 
 			case TN_COND_EXPR:
-//                loop_level = root->hdr.c_contxt->syms->clevel;
 				/* (cond)?(exp):(exp); */
-				loop_level++;
 				code_recur(ifn->cond);
 				printf("fjp else_%i\n",loop_level);
 				code_recur(ifn->then_n);
-				printf("ujp end_cond_%i\n",loop_level);
+				printf("ujp end_%i\n",loop_level);
 				printf("else_%i:\n",loop_level);
 				code_recur(ifn->else_n);
-				printf("end_cond_%i:\n",loop_level);
-
+				printf("end_%i:\n",loop_level);
 				break;
 
 			default:
@@ -319,9 +313,12 @@ int  code_recur(treenode *root)
 				code_recur(ifn->then_n);
 				code_recur(ifn->else_n);
 			}
+			loop_level=prev_scope;
 			break;
 
 		case FOR_T:
+		    prev_scope=loop_level;
+		    loop_level=scope_counter++;
 			forn = (for_node *) root;
 			switch (forn->hdr.type) {
 
@@ -339,16 +336,14 @@ int  code_recur(treenode *root)
 				/* For case*/
 				/* e.g. for(i=0;i<5;i++) { ... } */
 				/* Look at the output AST structure! */
-                //loop_level = root->hdr.c_contxt->syms->clevel;
-				loop_level++;
                 code_recur(forn->init);
 				printf("for_loop_%i:\n",loop_level);
 				code_recur(forn->test);
-				printf("fjp end_for_%i\n",loop_level);
+				printf("fjp end_%i\n",loop_level);
 				code_recur(forn->stemnt);
 				code_recur(forn->incr);
                 printf("ujp for_loop_%i\n",loop_level);
-                printf("end_for_%i:\n",loop_level);
+                printf("end_%i:\n",loop_level);
                 break;
 
 			default:
@@ -358,6 +353,7 @@ int  code_recur(treenode *root)
 				code_recur(forn->stemnt);
 				code_recur(forn->incr);
 			}
+			loop_level=prev_scope;
 			break;
 
 		case NODE_T:
@@ -592,12 +588,14 @@ int  code_recur(treenode *root)
 						code_recur(root->rnode);
 						// In normal case we can't release memory here
                         FreeSymbolTableMemory(head);
-					}
+                        printf("ujp end_%i\n",prev_scope);
+                    }
 					else if (root->hdr.tok == BREAK) {
 						/* break jump - for HW2! */
 						code_recur(root->lnode);
 						code_recur(root->rnode);
-					}
+                        printf("ujp end_%i\n",prev_scope);
+                    }
 					else if (root->hdr.tok == GOTO) {
 						/* GOTO jump - for HW2! */
 						code_recur(root->lnode);
@@ -628,7 +626,8 @@ int  code_recur(treenode *root)
 					code_recur(root->rnode); //This will print us the index => ldc index
 					if (arrayCounter > 0)
                     {
-                        printf("ixa %d\n", pVariable->arrayTable->dimSize[arrayCounter-1]*pVariable->arrayTable->typeSize);
+                        printf("ixa %d\n",
+                                pVariable->arrayTable->dimSize[arrayCounter-1]*pVariable->arrayTable->typeSize);
                         arrayCounter--;
                     } else{
 					    printf("ixa %d\n",pVariable->arrayTable->typeSize);
@@ -700,7 +699,6 @@ int  code_recur(treenode *root)
 						isLoadingVariable = 0;
 						printf("dec 1\n");
 						printf("sto\n");
-
 					}
 					else if (root->hdr.tok == STAR_EQ){
 						/* Multiply equal assignment "*=" */
@@ -711,7 +709,6 @@ int  code_recur(treenode *root)
 						isLoadingVariable = 0;
 						printf("mul\n");
 						printf("sto\n");
-
 					}
 					else if (root->hdr.tok == DIV_EQ){
 						/* Divide equal assignment "/=" */
@@ -722,7 +719,6 @@ int  code_recur(treenode *root)
 						isLoadingVariable = 0;
 						printf("div\n");
 						printf("sto\n");
-
 					}
 					break;
 
@@ -768,16 +764,13 @@ int  code_recur(treenode *root)
                               isLoadingVariable = 0;
                               printf("inc 1\n");
                               printf("sto\n");
-
                           }
-
 						  break;
 
 					  case DECR:
 						  /* Decrement token "--" */
                           leaf = (leafnode*)root->lnode;
                             if( leaf != NULL) {
-//                              printf("ldc %d\n", Find(leaf->data.sval->str)->address);
                                 code_recur(root->lnode);
                                 isLoadingVariable = 1;
                                 code_recur(root->lnode);
@@ -788,11 +781,9 @@ int  code_recur(treenode *root)
                                     code_recur(root->lnode);
                                 }
                                 isLoadingVariable = 0;
-
                             }
                             leaf = (leafnode*)root->rnode;
                             if (leaf !=NULL) {
-
                                 if (isAssaigment)
                                 {
                                     isLoadingVariable = 1;
@@ -806,7 +797,6 @@ int  code_recur(treenode *root)
                                 isLoadingVariable = 0;
                                 printf("dec 1\n");
                                 printf("sto\n");
-
                             }
                             break;
 
@@ -826,17 +816,14 @@ int  code_recur(treenode *root)
 						  code_recur(root->rnode);
 						  isLoadingVariable = 0;
 						  leaf = (leafnode*)root->lnode;
-
 						  if (leaf != NULL)
                           {
                               printf("sub\n");
 						  }
-
 						  else
                           {
 						      printf("neg\n");
                           }
-
 						  break;
 
 					  case DIV:
@@ -951,28 +938,29 @@ int  code_recur(treenode *root)
 					}
 					break;
 
-
                 case TN_WHILE:
-                    //loop_level = root->hdr.c_contxt->syms->clevel;
-                    loop_level++;
+                    prev_scope=loop_level;
+                    loop_level=scope_counter++;
 				    printf("while_loop_%i:\n",loop_level);
                     code_recur(root->lnode);
-                    printf("fjp end_loop_%i\n",loop_level);
+                    printf("fjp end_%i\n",loop_level);
                     code_recur(root->rnode);
                     printf("ujp while_loop_%i\n",loop_level);
-                    printf("end_loop_%i:\n",loop_level);
+                    printf("end_%i:\n",loop_level);
+                    loop_level=prev_scope;
                     break;
 
 				case TN_DOWHILE:
                     /* Do-While case */
-                    //loop_level = root->hdr.c_contxt->syms->clevel;
-                    loop_level++;
+                    prev_scope=loop_level;
+                    loop_level=scope_counter++;
                     printf("do_while_loop_%i:\n",loop_level);
                     code_recur(root->rnode);
                     code_recur(root->lnode);
-                    printf("fjp end_loop_%i\n",loop_level);
+                    printf("fjp end_%i\n",loop_level);
                     printf("ujp do_while_loop_%i\n",loop_level);
-                    printf("end_loop_%i:\n",loop_level);
+                    printf("end_%i:\n",loop_level);
+                    loop_level=prev_scope;
                     break;
 
 				case TN_LABEL:
