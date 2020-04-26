@@ -1,18 +1,13 @@
 #include <stdio.h>
+struct B{
+    struct B* c;
+    int l;
+    int j;
+};
 
 void main() {
-    int x;
-    int i;
-    i = 0;
-    x = 0;
-    for (; i<10; i++)
-    {
-        x = i*i;
-        printf("%d\n", x);
-        if (x>50)
-        {
-            break;
-        }
-    }
+    int l;
+    l = 1;
+    printf("%d\n",k);
     return;
 }
