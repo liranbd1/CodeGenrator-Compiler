@@ -9,7 +9,7 @@ void main() {
     {
         x = i*i;
         printf("%d\n", x);
-        if (x>50)
+        if (x > 20)
         {
             break;
         }
