@@ -1,0 +1,9 @@
+diff a/compiler_files/CodeGenerator.c b/compiler_files/CodeGenerator.c	(rejected hunks)
+@@ -46,7 +46,6 @@
+ int tmpPointerSize = 0;
+ int isDereferance = 0;
+ int derefLoop = 0;
+-int isObjRef = 0;
+ int scope_counter = 0;
+ int prev_scope;
+ 

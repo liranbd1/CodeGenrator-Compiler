@@ -54,6 +54,9 @@ int objSize = 0;
 int isDeclaration = 0;
 int isObjRef = 0;
 
+int scope_counter = 0;
+int prev_scope;
+
 Symbol_table* Find (const char* name)
 {
     Variable* currentPtr = head;
@@ -102,6 +105,7 @@ void Add (Symbol_table * newSymbol)
         else{
             newSymbol->address = ptr->table->address + ptr->table->varSize;
         }
+      
         newVariable->table = newSymbol;
         newVariable->prev = ptr;
         newVariable->next = NULL;
