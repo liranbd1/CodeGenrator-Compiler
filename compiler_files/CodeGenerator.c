@@ -16,6 +16,7 @@ typedef struct symbol_table {
     int varSize;
     Array_table* arrayTable;
     int isArray;
+    int isComponent;
 } Symbol_table;
 
 typedef struct variable {
@@ -46,6 +47,12 @@ int isAssaigment = 0;
 int tmpPointerSize = 0;
 int isDereferance = 0;
 int derefLoop = 0;
+int isComponent = 0;
+int isObjDef = 0;
+char* objDefName;
+int objSize = 0;
+int isDeclaration = 0;
+int isObjRef = 0;
 int scope_counter = 0;
 int prev_scope;
 
@@ -63,6 +70,20 @@ Symbol_table* Find (const char* name)
     return NULL;
 }
 
+
+Symbol_table* FindByType (const char* type)
+{
+    Variable* currentPtr = head;
+    while (currentPtr != NULL)
+    {
+        if(currentPtr->table->type == type)
+        {
+            return currentPtr->table;
+        }
+        currentPtr = currentPtr->next;
+    }
+    return NULL;
+}
 /*Adding data to the Symbol table*/
 void Add (Symbol_table * newSymbol)
 {
@@ -75,6 +96,13 @@ void Add (Symbol_table * newSymbol)
         {
             ptr->last = newVariable;
             ptr = ptr->next;
+        }
+        if(ptr->table->varSize == -1)
+        {
+            newSymbol->address = ptr->table->address + 1;
+        }
+        else{
+            newSymbol->address = ptr->table->address + ptr->table->varSize;
         }
         newSymbol->address = ptr->table->address + ptr->table->varSize;
         newVariable->table = newSymbol;
@@ -130,11 +158,13 @@ void FreeSymbolTableMemory(Variable* Head)
             free(ptr->table->arrayTable->dimSize);
             free(ptr->table->arrayTable);
         }
+
         free(ptr->table);
         Variable* tmp = ptr;
         ptr = ptr->next;
         free(tmp);
     }
+
     tmpTable = ptr->table;
     if (tmpTable->isArray)
     {
@@ -192,26 +222,36 @@ int  code_recur(treenode *root)
 				// From that I can see that we first need to see if this variable is already in our Symbol_table.
 				//The case we don't return a 0
 				//printf("TN_IDENT\n");
-				pVariable = Find(leaf->data.sval->str);
-				if(pVariable != NULL) {
-                    printf("ldc %d\n", pVariable->address);
-                    if(isLoadingVariable)
-                    {
-                        printf("ind\n");
-                    }
-
-                    if (isDereferance)
-                    {
-                        derefLoop = tmpPointerSize;
-                        while (derefLoop > 0)
-                        {
+				if(!isDeclaration) {
+                    pVariable = Find(leaf->data.sval->str);
+                    if (pVariable != NULL) {
+                        printf("ldc %d\n", pVariable->address);
+                        if (isLoadingVariable) {
                             printf("ind\n");
-                            derefLoop--;
                         }
-                    }
 
-                } else{
-				   tmpName = leaf->data.sval->str;
+                        if (isDereferance) {
+                            derefLoop = tmpPointerSize;
+                            while (derefLoop > 0) {
+                                printf("ind\n");
+                                derefLoop--;
+                            }
+                        }
+
+                    }
+                }
+				else{
+				    if (isObjDef)
+                    {
+				        objDefName = leaf->data.sval->str;
+                    }
+				    else if (isObjRef)
+                    {
+				        tmpType = leaf->data.sval->str;
+                    }
+				    else{
+                        tmpName = leaf->data.sval->str;
+                    }
 				}
 				//	printf("We are in teh Variable case\n");
 					break;
@@ -471,29 +511,85 @@ int  code_recur(treenode *root)
 
 				case TN_COMP_DECL:
 					/* struct component declaration - for HW2 */
+					isComponent = 1;
 					code_recur(root->lnode);
 					code_recur(root->rnode);
+                    Symbol_table* tmpCompTable = (Symbol_table*)malloc(sizeof(Symbol_table));
+                    tmpCompTable->isComponent = isComponent;
+                    tmpCompTable->name = tmpName;
+                    tmpCompTable->type = tmpType;
+                    pVariable = Find(tmpType);
+                    if (pVariable != NULL)
+                    {
+                        if (tmpType != pVariable->name)
+                        {
+                            tmpSize = pVariable->varSize;
+                        }
+                    }
+
+                    tmpCompTable->varSize = tmpSize;
+                    if (tmpSize == 0)
+                    {
+                        objSize += 1;
+                    }
+
+                    else
+                    {
+                        objSize += tmpSize;
+                    }
+
+                    leaf = (leafnode*)root->rnode;
+                    if (leaf != NULL) {
+                        if (leaf->hdr.type == TN_ARRAY_DECL) {
+                            tmpCompTable->arrayTable = (Array_table *) malloc(sizeof(Array_table));
+                            tmpCompTable->arrayTable->dimensions = tmpArrayDim;
+                            tmpCompTable->arrayTable->dimSize = tmpArrayDimSizes;
+                            tmpCompTable->arrayTable->typeSize = 1;
+                            tmpIsArray = 1;
+                            tmpArrayDim = 0;
+                            tmpArrayDimSizes = NULL;
+                            arrayCounter = 0;
+                        }
+                    }
+                    tmpCompTable->isArray = tmpIsArray;
+                    tmpIsArray = 0;
+                    if (!isPointer)
+                    {
+                        Add(tmpCompTable);
+                        ClearData();
+                    } else
+                    {
+                        isPointer = 0;
+                    }
+                    isComponent = 0;
+					//After here we have a property of the struct for example int c;
 					break;
 
 			    case TN_DECL:
+			        //2nd stop in struct
+			        isDeclaration = 1;
 			        code_recur(root->lnode);
 			        code_recur(root->rnode);
+			        if (tmpName == "")
+                    {
+			            break;
+                    }
 			        Symbol_table* tmpSymbolTable = (Symbol_table*)malloc(sizeof(Symbol_table));
 			        tmpSymbolTable->name = tmpName;
 			        tmpSymbolTable->type = tmpType;
 			        tmpSymbolTable->varSize = tmpSize;
 			        leaf = (leafnode*)root->rnode;
-			        if(leaf->hdr.type == TN_ARRAY_DECL)
-                    {
-			            tmpSymbolTable->arrayTable = (Array_table*)malloc(sizeof(Array_table));
-			            tmpSymbolTable->arrayTable->dimensions = tmpArrayDim;
-			            tmpSymbolTable->arrayTable->dimSize = tmpArrayDimSizes;
-			            tmpSymbolTable->arrayTable->typeSize = 1;
-			            tmpIsArray = 1;
-			            tmpArrayDim = 0;
-			            free(tmpArrayDimSizes);
-			            tmpArrayDimSizes = NULL;
-			            arrayCounter = 0;
+			        if (leaf != NULL) {
+                        if (leaf->hdr.type == TN_ARRAY_DECL) {
+                            tmpSymbolTable->arrayTable = (Array_table *) malloc(sizeof(Array_table));
+                            tmpSymbolTable->arrayTable->dimensions = tmpArrayDim;
+                            tmpSymbolTable->arrayTable->dimSize = tmpArrayDimSizes;
+                            tmpSymbolTable->arrayTable->typeSize = 1;
+                            tmpIsArray = 1;
+                            tmpArrayDim = 0;
+                            tmpArrayDimSizes = NULL;
+                            arrayCounter = 0;
+                        }
                     }
 			        tmpSymbolTable->isArray = tmpIsArray;
 			        tmpIsArray = 0;
@@ -505,6 +601,7 @@ int  code_recur(treenode *root)
                     {
 			            isPointer = 0;
                     }
+			        isDeclaration = 0;
                     break;
 
 				case TN_DECL_LIST:
@@ -565,14 +662,25 @@ int  code_recur(treenode *root)
 
 				case TN_OBJ_DEF:
 					/* Maybe you will use it later */
+					isObjDef = 1;
 					code_recur(root->lnode);
+					isObjDef = 0;
+					Symbol_table* tmpTable = (Symbol_table*)malloc(sizeof(Symbol_table));
+					tmpTable->name = objDefName;
+					tmpTable->type = "Struct";
+					tmpTable->varSize = -1;
+					Add(tmpTable);
 					code_recur(root->rnode);
+                    pVariable = Find(tmpTable->name);
+                    pVariable->varSize = objSize;
 					break;
 
 				case TN_OBJ_REF:
 					/* Maybe you will use it later */
+					isObjRef = 1;
 					code_recur(root->lnode);
 					code_recur(root->rnode);
+					isObjRef = 0;
 					break;
 
 				case TN_CAST:
