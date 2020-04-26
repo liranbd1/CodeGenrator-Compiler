@@ -1,3 +1,3 @@
-C:/Users/liran/Desktop/c-compiler_test/cmake-build-debug/CMakeFiles/c_compiler_test.dir
-C:/Users/liran/Desktop/c-compiler_test/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/liran/Desktop/c-compiler_test/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+C:/Users/liran/Documents/Compilers/cmake-build-debug/CMakeFiles/c_compiler_test.dir
+C:/Users/liran/Documents/Compilers/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/liran/Documents/Compilers/cmake-build-debug/CMakeFiles/rebuild_cache.dir

@@ -1,5 +1,4 @@
 #include	"CodeGenerator.h"
-#include "tree.h"
 
 typedef struct array_table {
 
