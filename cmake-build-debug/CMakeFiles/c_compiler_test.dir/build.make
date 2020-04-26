@@ -42,10 +42,10 @@ RM = "C:\Program Files\JetBrains\CLion 2019.3.5\bin\cmake\win\bin\cmake.exe" -E 
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Users\liran\Desktop\c-compiler_test
+CMAKE_SOURCE_DIR = C:\Users\liran\Documents\Compilers
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\liran\Desktop\c-compiler_test\cmake-build-debug
+CMAKE_BINARY_DIR = C:\Users\liran\Documents\Compilers\cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/c_compiler_test.dir/depend.make
@@ -59,170 +59,170 @@ include CMakeFiles/c_compiler_test.dir/flags.make
 CMakeFiles/c_compiler_test.dir/compiler_files/CodeGenerator.c.obj: CMakeFiles/c_compiler_test.dir/flags.make
 CMakeFiles/c_compiler_test.dir/compiler_files/CodeGenerator.c.obj: CMakeFiles/c_compiler_test.dir/includes_C.rsp
 CMakeFiles/c_compiler_test.dir/compiler_files/CodeGenerator.c.obj: ../compiler_files/CodeGenerator.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\liran\Desktop\c-compiler_test\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/c_compiler_test.dir/compiler_files/CodeGenerator.c.obj"
-	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\c_compiler_test.dir\compiler_files\CodeGenerator.c.obj   -c C:\Users\liran\Desktop\c-compiler_test\compiler_files\CodeGenerator.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\liran\Documents\Compilers\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/c_compiler_test.dir/compiler_files/CodeGenerator.c.obj"
+	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\c_compiler_test.dir\compiler_files\CodeGenerator.c.obj   -c C:\Users\liran\Documents\Compilers\compiler_files\CodeGenerator.c
 
 CMakeFiles/c_compiler_test.dir/compiler_files/CodeGenerator.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/c_compiler_test.dir/compiler_files/CodeGenerator.c.i"
-	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\liran\Desktop\c-compiler_test\compiler_files\CodeGenerator.c > CMakeFiles\c_compiler_test.dir\compiler_files\CodeGenerator.c.i
+	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\liran\Documents\Compilers\compiler_files\CodeGenerator.c > CMakeFiles\c_compiler_test.dir\compiler_files\CodeGenerator.c.i
 
 CMakeFiles/c_compiler_test.dir/compiler_files/CodeGenerator.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/c_compiler_test.dir/compiler_files/CodeGenerator.c.s"
-	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\liran\Desktop\c-compiler_test\compiler_files\CodeGenerator.c -o CMakeFiles\c_compiler_test.dir\compiler_files\CodeGenerator.c.s
+	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\liran\Documents\Compilers\compiler_files\CodeGenerator.c -o CMakeFiles\c_compiler_test.dir\compiler_files\CodeGenerator.c.s
 
 CMakeFiles/c_compiler_test.dir/compiler_files/ctree.c.obj: CMakeFiles/c_compiler_test.dir/flags.make
 CMakeFiles/c_compiler_test.dir/compiler_files/ctree.c.obj: CMakeFiles/c_compiler_test.dir/includes_C.rsp
 CMakeFiles/c_compiler_test.dir/compiler_files/ctree.c.obj: ../compiler_files/ctree.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\liran\Desktop\c-compiler_test\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/c_compiler_test.dir/compiler_files/ctree.c.obj"
-	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\c_compiler_test.dir\compiler_files\ctree.c.obj   -c C:\Users\liran\Desktop\c-compiler_test\compiler_files\ctree.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\liran\Documents\Compilers\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/c_compiler_test.dir/compiler_files/ctree.c.obj"
+	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\c_compiler_test.dir\compiler_files\ctree.c.obj   -c C:\Users\liran\Documents\Compilers\compiler_files\ctree.c
 
 CMakeFiles/c_compiler_test.dir/compiler_files/ctree.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/c_compiler_test.dir/compiler_files/ctree.c.i"
-	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\liran\Desktop\c-compiler_test\compiler_files\ctree.c > CMakeFiles\c_compiler_test.dir\compiler_files\ctree.c.i
+	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\liran\Documents\Compilers\compiler_files\ctree.c > CMakeFiles\c_compiler_test.dir\compiler_files\ctree.c.i
 
 CMakeFiles/c_compiler_test.dir/compiler_files/ctree.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/c_compiler_test.dir/compiler_files/ctree.c.s"
-	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\liran\Desktop\c-compiler_test\compiler_files\ctree.c -o CMakeFiles\c_compiler_test.dir\compiler_files\ctree.c.s
+	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\liran\Documents\Compilers\compiler_files\ctree.c -o CMakeFiles\c_compiler_test.dir\compiler_files\ctree.c.s
 
 CMakeFiles/c_compiler_test.dir/compiler_files/heap.c.obj: CMakeFiles/c_compiler_test.dir/flags.make
 CMakeFiles/c_compiler_test.dir/compiler_files/heap.c.obj: CMakeFiles/c_compiler_test.dir/includes_C.rsp
 CMakeFiles/c_compiler_test.dir/compiler_files/heap.c.obj: ../compiler_files/heap.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\liran\Desktop\c-compiler_test\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/c_compiler_test.dir/compiler_files/heap.c.obj"
-	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\c_compiler_test.dir\compiler_files\heap.c.obj   -c C:\Users\liran\Desktop\c-compiler_test\compiler_files\heap.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\liran\Documents\Compilers\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/c_compiler_test.dir/compiler_files/heap.c.obj"
+	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\c_compiler_test.dir\compiler_files\heap.c.obj   -c C:\Users\liran\Documents\Compilers\compiler_files\heap.c
 
 CMakeFiles/c_compiler_test.dir/compiler_files/heap.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/c_compiler_test.dir/compiler_files/heap.c.i"
-	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\liran\Desktop\c-compiler_test\compiler_files\heap.c > CMakeFiles\c_compiler_test.dir\compiler_files\heap.c.i
+	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\liran\Documents\Compilers\compiler_files\heap.c > CMakeFiles\c_compiler_test.dir\compiler_files\heap.c.i
 
 CMakeFiles/c_compiler_test.dir/compiler_files/heap.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/c_compiler_test.dir/compiler_files/heap.c.s"
-	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\liran\Desktop\c-compiler_test\compiler_files\heap.c -o CMakeFiles\c_compiler_test.dir\compiler_files\heap.c.s
+	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\liran\Documents\Compilers\compiler_files\heap.c -o CMakeFiles\c_compiler_test.dir\compiler_files\heap.c.s
 
 CMakeFiles/c_compiler_test.dir/compiler_files/nmetab.c.obj: CMakeFiles/c_compiler_test.dir/flags.make
 CMakeFiles/c_compiler_test.dir/compiler_files/nmetab.c.obj: CMakeFiles/c_compiler_test.dir/includes_C.rsp
 CMakeFiles/c_compiler_test.dir/compiler_files/nmetab.c.obj: ../compiler_files/nmetab.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\liran\Desktop\c-compiler_test\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/c_compiler_test.dir/compiler_files/nmetab.c.obj"
-	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\c_compiler_test.dir\compiler_files\nmetab.c.obj   -c C:\Users\liran\Desktop\c-compiler_test\compiler_files\nmetab.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\liran\Documents\Compilers\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/c_compiler_test.dir/compiler_files/nmetab.c.obj"
+	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\c_compiler_test.dir\compiler_files\nmetab.c.obj   -c C:\Users\liran\Documents\Compilers\compiler_files\nmetab.c
 
 CMakeFiles/c_compiler_test.dir/compiler_files/nmetab.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/c_compiler_test.dir/compiler_files/nmetab.c.i"
-	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\liran\Desktop\c-compiler_test\compiler_files\nmetab.c > CMakeFiles\c_compiler_test.dir\compiler_files\nmetab.c.i
+	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\liran\Documents\Compilers\compiler_files\nmetab.c > CMakeFiles\c_compiler_test.dir\compiler_files\nmetab.c.i
 
 CMakeFiles/c_compiler_test.dir/compiler_files/nmetab.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/c_compiler_test.dir/compiler_files/nmetab.c.s"
-	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\liran\Desktop\c-compiler_test\compiler_files\nmetab.c -o CMakeFiles\c_compiler_test.dir\compiler_files\nmetab.c.s
+	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\liran\Documents\Compilers\compiler_files\nmetab.c -o CMakeFiles\c_compiler_test.dir\compiler_files\nmetab.c.s
 
 CMakeFiles/c_compiler_test.dir/compiler_files/prnttree.c.obj: CMakeFiles/c_compiler_test.dir/flags.make
 CMakeFiles/c_compiler_test.dir/compiler_files/prnttree.c.obj: CMakeFiles/c_compiler_test.dir/includes_C.rsp
 CMakeFiles/c_compiler_test.dir/compiler_files/prnttree.c.obj: ../compiler_files/prnttree.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\liran\Desktop\c-compiler_test\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/c_compiler_test.dir/compiler_files/prnttree.c.obj"
-	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\c_compiler_test.dir\compiler_files\prnttree.c.obj   -c C:\Users\liran\Desktop\c-compiler_test\compiler_files\prnttree.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\liran\Documents\Compilers\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/c_compiler_test.dir/compiler_files/prnttree.c.obj"
+	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\c_compiler_test.dir\compiler_files\prnttree.c.obj   -c C:\Users\liran\Documents\Compilers\compiler_files\prnttree.c
 
 CMakeFiles/c_compiler_test.dir/compiler_files/prnttree.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/c_compiler_test.dir/compiler_files/prnttree.c.i"
-	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\liran\Desktop\c-compiler_test\compiler_files\prnttree.c > CMakeFiles\c_compiler_test.dir\compiler_files\prnttree.c.i
+	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\liran\Documents\Compilers\compiler_files\prnttree.c > CMakeFiles\c_compiler_test.dir\compiler_files\prnttree.c.i
 
 CMakeFiles/c_compiler_test.dir/compiler_files/prnttree.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/c_compiler_test.dir/compiler_files/prnttree.c.s"
-	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\liran\Desktop\c-compiler_test\compiler_files\prnttree.c -o CMakeFiles\c_compiler_test.dir\compiler_files\prnttree.c.s
+	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\liran\Documents\Compilers\compiler_files\prnttree.c -o CMakeFiles\c_compiler_test.dir\compiler_files\prnttree.c.s
 
 CMakeFiles/c_compiler_test.dir/compiler_files/symtab.c.obj: CMakeFiles/c_compiler_test.dir/flags.make
 CMakeFiles/c_compiler_test.dir/compiler_files/symtab.c.obj: CMakeFiles/c_compiler_test.dir/includes_C.rsp
 CMakeFiles/c_compiler_test.dir/compiler_files/symtab.c.obj: ../compiler_files/symtab.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\liran\Desktop\c-compiler_test\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/c_compiler_test.dir/compiler_files/symtab.c.obj"
-	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\c_compiler_test.dir\compiler_files\symtab.c.obj   -c C:\Users\liran\Desktop\c-compiler_test\compiler_files\symtab.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\liran\Documents\Compilers\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/c_compiler_test.dir/compiler_files/symtab.c.obj"
+	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\c_compiler_test.dir\compiler_files\symtab.c.obj   -c C:\Users\liran\Documents\Compilers\compiler_files\symtab.c
 
 CMakeFiles/c_compiler_test.dir/compiler_files/symtab.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/c_compiler_test.dir/compiler_files/symtab.c.i"
-	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\liran\Desktop\c-compiler_test\compiler_files\symtab.c > CMakeFiles\c_compiler_test.dir\compiler_files\symtab.c.i
+	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\liran\Documents\Compilers\compiler_files\symtab.c > CMakeFiles\c_compiler_test.dir\compiler_files\symtab.c.i
 
 CMakeFiles/c_compiler_test.dir/compiler_files/symtab.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/c_compiler_test.dir/compiler_files/symtab.c.s"
-	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\liran\Desktop\c-compiler_test\compiler_files\symtab.c -o CMakeFiles\c_compiler_test.dir\compiler_files\symtab.c.s
+	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\liran\Documents\Compilers\compiler_files\symtab.c -o CMakeFiles\c_compiler_test.dir\compiler_files\symtab.c.s
 
 CMakeFiles/c_compiler_test.dir/compiler_files/token.c.obj: CMakeFiles/c_compiler_test.dir/flags.make
 CMakeFiles/c_compiler_test.dir/compiler_files/token.c.obj: CMakeFiles/c_compiler_test.dir/includes_C.rsp
 CMakeFiles/c_compiler_test.dir/compiler_files/token.c.obj: ../compiler_files/token.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\liran\Desktop\c-compiler_test\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/c_compiler_test.dir/compiler_files/token.c.obj"
-	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\c_compiler_test.dir\compiler_files\token.c.obj   -c C:\Users\liran\Desktop\c-compiler_test\compiler_files\token.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\liran\Documents\Compilers\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/c_compiler_test.dir/compiler_files/token.c.obj"
+	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\c_compiler_test.dir\compiler_files\token.c.obj   -c C:\Users\liran\Documents\Compilers\compiler_files\token.c
 
 CMakeFiles/c_compiler_test.dir/compiler_files/token.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/c_compiler_test.dir/compiler_files/token.c.i"
-	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\liran\Desktop\c-compiler_test\compiler_files\token.c > CMakeFiles\c_compiler_test.dir\compiler_files\token.c.i
+	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\liran\Documents\Compilers\compiler_files\token.c > CMakeFiles\c_compiler_test.dir\compiler_files\token.c.i
 
 CMakeFiles/c_compiler_test.dir/compiler_files/token.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/c_compiler_test.dir/compiler_files/token.c.s"
-	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\liran\Desktop\c-compiler_test\compiler_files\token.c -o CMakeFiles\c_compiler_test.dir\compiler_files\token.c.s
+	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\liran\Documents\Compilers\compiler_files\token.c -o CMakeFiles\c_compiler_test.dir\compiler_files\token.c.s
 
 CMakeFiles/c_compiler_test.dir/compiler_files/tree.c.obj: CMakeFiles/c_compiler_test.dir/flags.make
 CMakeFiles/c_compiler_test.dir/compiler_files/tree.c.obj: CMakeFiles/c_compiler_test.dir/includes_C.rsp
 CMakeFiles/c_compiler_test.dir/compiler_files/tree.c.obj: ../compiler_files/tree.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\liran\Desktop\c-compiler_test\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object CMakeFiles/c_compiler_test.dir/compiler_files/tree.c.obj"
-	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\c_compiler_test.dir\compiler_files\tree.c.obj   -c C:\Users\liran\Desktop\c-compiler_test\compiler_files\tree.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\liran\Documents\Compilers\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object CMakeFiles/c_compiler_test.dir/compiler_files/tree.c.obj"
+	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\c_compiler_test.dir\compiler_files\tree.c.obj   -c C:\Users\liran\Documents\Compilers\compiler_files\tree.c
 
 CMakeFiles/c_compiler_test.dir/compiler_files/tree.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/c_compiler_test.dir/compiler_files/tree.c.i"
-	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\liran\Desktop\c-compiler_test\compiler_files\tree.c > CMakeFiles\c_compiler_test.dir\compiler_files\tree.c.i
+	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\liran\Documents\Compilers\compiler_files\tree.c > CMakeFiles\c_compiler_test.dir\compiler_files\tree.c.i
 
 CMakeFiles/c_compiler_test.dir/compiler_files/tree.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/c_compiler_test.dir/compiler_files/tree.c.s"
-	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\liran\Desktop\c-compiler_test\compiler_files\tree.c -o CMakeFiles\c_compiler_test.dir\compiler_files\tree.c.s
+	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\liran\Documents\Compilers\compiler_files\tree.c -o CMakeFiles\c_compiler_test.dir\compiler_files\tree.c.s
 
 CMakeFiles/c_compiler_test.dir/compiler_files/treestk.c.obj: CMakeFiles/c_compiler_test.dir/flags.make
 CMakeFiles/c_compiler_test.dir/compiler_files/treestk.c.obj: CMakeFiles/c_compiler_test.dir/includes_C.rsp
 CMakeFiles/c_compiler_test.dir/compiler_files/treestk.c.obj: ../compiler_files/treestk.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\liran\Desktop\c-compiler_test\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object CMakeFiles/c_compiler_test.dir/compiler_files/treestk.c.obj"
-	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\c_compiler_test.dir\compiler_files\treestk.c.obj   -c C:\Users\liran\Desktop\c-compiler_test\compiler_files\treestk.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\liran\Documents\Compilers\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object CMakeFiles/c_compiler_test.dir/compiler_files/treestk.c.obj"
+	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\c_compiler_test.dir\compiler_files\treestk.c.obj   -c C:\Users\liran\Documents\Compilers\compiler_files\treestk.c
 
 CMakeFiles/c_compiler_test.dir/compiler_files/treestk.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/c_compiler_test.dir/compiler_files/treestk.c.i"
-	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\liran\Desktop\c-compiler_test\compiler_files\treestk.c > CMakeFiles\c_compiler_test.dir\compiler_files\treestk.c.i
+	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\liran\Documents\Compilers\compiler_files\treestk.c > CMakeFiles\c_compiler_test.dir\compiler_files\treestk.c.i
 
 CMakeFiles/c_compiler_test.dir/compiler_files/treestk.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/c_compiler_test.dir/compiler_files/treestk.c.s"
-	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\liran\Desktop\c-compiler_test\compiler_files\treestk.c -o CMakeFiles\c_compiler_test.dir\compiler_files\treestk.c.s
+	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\liran\Documents\Compilers\compiler_files\treestk.c -o CMakeFiles\c_compiler_test.dir\compiler_files\treestk.c.s
 
 CMakeFiles/c_compiler_test.dir/compiler_files/dsm_extension.c.obj: CMakeFiles/c_compiler_test.dir/flags.make
 CMakeFiles/c_compiler_test.dir/compiler_files/dsm_extension.c.obj: CMakeFiles/c_compiler_test.dir/includes_C.rsp
 CMakeFiles/c_compiler_test.dir/compiler_files/dsm_extension.c.obj: ../compiler_files/dsm_extension.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\liran\Desktop\c-compiler_test\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building C object CMakeFiles/c_compiler_test.dir/compiler_files/dsm_extension.c.obj"
-	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\c_compiler_test.dir\compiler_files\dsm_extension.c.obj   -c C:\Users\liran\Desktop\c-compiler_test\compiler_files\dsm_extension.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\liran\Documents\Compilers\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building C object CMakeFiles/c_compiler_test.dir/compiler_files/dsm_extension.c.obj"
+	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\c_compiler_test.dir\compiler_files\dsm_extension.c.obj   -c C:\Users\liran\Documents\Compilers\compiler_files\dsm_extension.c
 
 CMakeFiles/c_compiler_test.dir/compiler_files/dsm_extension.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/c_compiler_test.dir/compiler_files/dsm_extension.c.i"
-	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\liran\Desktop\c-compiler_test\compiler_files\dsm_extension.c > CMakeFiles\c_compiler_test.dir\compiler_files\dsm_extension.c.i
+	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\liran\Documents\Compilers\compiler_files\dsm_extension.c > CMakeFiles\c_compiler_test.dir\compiler_files\dsm_extension.c.i
 
 CMakeFiles/c_compiler_test.dir/compiler_files/dsm_extension.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/c_compiler_test.dir/compiler_files/dsm_extension.c.s"
-	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\liran\Desktop\c-compiler_test\compiler_files\dsm_extension.c -o CMakeFiles\c_compiler_test.dir\compiler_files\dsm_extension.c.s
+	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\liran\Documents\Compilers\compiler_files\dsm_extension.c -o CMakeFiles\c_compiler_test.dir\compiler_files\dsm_extension.c.s
 
 CMakeFiles/c_compiler_test.dir/compiler_files/lexer.c.obj: CMakeFiles/c_compiler_test.dir/flags.make
 CMakeFiles/c_compiler_test.dir/compiler_files/lexer.c.obj: CMakeFiles/c_compiler_test.dir/includes_C.rsp
 CMakeFiles/c_compiler_test.dir/compiler_files/lexer.c.obj: ../compiler_files/lexer.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\liran\Desktop\c-compiler_test\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building C object CMakeFiles/c_compiler_test.dir/compiler_files/lexer.c.obj"
-	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\c_compiler_test.dir\compiler_files\lexer.c.obj   -c C:\Users\liran\Desktop\c-compiler_test\compiler_files\lexer.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\liran\Documents\Compilers\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building C object CMakeFiles/c_compiler_test.dir/compiler_files/lexer.c.obj"
+	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\c_compiler_test.dir\compiler_files\lexer.c.obj   -c C:\Users\liran\Documents\Compilers\compiler_files\lexer.c
 
 CMakeFiles/c_compiler_test.dir/compiler_files/lexer.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/c_compiler_test.dir/compiler_files/lexer.c.i"
-	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\liran\Desktop\c-compiler_test\compiler_files\lexer.c > CMakeFiles\c_compiler_test.dir\compiler_files\lexer.c.i
+	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\liran\Documents\Compilers\compiler_files\lexer.c > CMakeFiles\c_compiler_test.dir\compiler_files\lexer.c.i
 
 CMakeFiles/c_compiler_test.dir/compiler_files/lexer.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/c_compiler_test.dir/compiler_files/lexer.c.s"
-	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\liran\Desktop\c-compiler_test\compiler_files\lexer.c -o CMakeFiles\c_compiler_test.dir\compiler_files\lexer.c.s
+	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\liran\Documents\Compilers\compiler_files\lexer.c -o CMakeFiles\c_compiler_test.dir\compiler_files\lexer.c.s
 
 CMakeFiles/c_compiler_test.dir/compiler_files/gram.c.obj: CMakeFiles/c_compiler_test.dir/flags.make
 CMakeFiles/c_compiler_test.dir/compiler_files/gram.c.obj: CMakeFiles/c_compiler_test.dir/includes_C.rsp
 CMakeFiles/c_compiler_test.dir/compiler_files/gram.c.obj: ../compiler_files/gram.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\liran\Desktop\c-compiler_test\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building C object CMakeFiles/c_compiler_test.dir/compiler_files/gram.c.obj"
-	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\c_compiler_test.dir\compiler_files\gram.c.obj   -c C:\Users\liran\Desktop\c-compiler_test\compiler_files\gram.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\liran\Documents\Compilers\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building C object CMakeFiles/c_compiler_test.dir/compiler_files/gram.c.obj"
+	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\c_compiler_test.dir\compiler_files\gram.c.obj   -c C:\Users\liran\Documents\Compilers\compiler_files\gram.c
 
 CMakeFiles/c_compiler_test.dir/compiler_files/gram.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/c_compiler_test.dir/compiler_files/gram.c.i"
-	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\liran\Desktop\c-compiler_test\compiler_files\gram.c > CMakeFiles\c_compiler_test.dir\compiler_files\gram.c.i
+	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\liran\Documents\Compilers\compiler_files\gram.c > CMakeFiles\c_compiler_test.dir\compiler_files\gram.c.i
 
 CMakeFiles/c_compiler_test.dir/compiler_files/gram.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/c_compiler_test.dir/compiler_files/gram.c.s"
-	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\liran\Desktop\c-compiler_test\compiler_files\gram.c -o CMakeFiles\c_compiler_test.dir\compiler_files\gram.c.s
+	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\liran\Documents\Compilers\compiler_files\gram.c -o CMakeFiles\c_compiler_test.dir\compiler_files\gram.c.s
 
 # Object files for target c_compiler_test
 c_compiler_test_OBJECTS = \
@@ -258,7 +258,7 @@ c_compiler_test.exe: CMakeFiles/c_compiler_test.dir/build.make
 c_compiler_test.exe: CMakeFiles/c_compiler_test.dir/linklibs.rsp
 c_compiler_test.exe: CMakeFiles/c_compiler_test.dir/objects1.rsp
 c_compiler_test.exe: CMakeFiles/c_compiler_test.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\liran\Desktop\c-compiler_test\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Linking C executable c_compiler_test.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\liran\Documents\Compilers\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Linking C executable c_compiler_test.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\c_compiler_test.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -271,6 +271,6 @@ CMakeFiles/c_compiler_test.dir/clean:
 .PHONY : CMakeFiles/c_compiler_test.dir/clean
 
 CMakeFiles/c_compiler_test.dir/depend:
-	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" C:\Users\liran\Desktop\c-compiler_test C:\Users\liran\Desktop\c-compiler_test C:\Users\liran\Desktop\c-compiler_test\cmake-build-debug C:\Users\liran\Desktop\c-compiler_test\cmake-build-debug C:\Users\liran\Desktop\c-compiler_test\cmake-build-debug\CMakeFiles\c_compiler_test.dir\DependInfo.cmake --color=$(COLOR)
+	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" C:\Users\liran\Documents\Compilers C:\Users\liran\Documents\Compilers C:\Users\liran\Documents\Compilers\cmake-build-debug C:\Users\liran\Documents\Compilers\cmake-build-debug C:\Users\liran\Documents\Compilers\cmake-build-debug\CMakeFiles\c_compiler_test.dir\DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/c_compiler_test.dir/depend
 
