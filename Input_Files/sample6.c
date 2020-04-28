@@ -1,17 +1,15 @@
 #include <stdio.h>
-struct B{
+struct B
+{
     int a;
-    int d;
-    double l;
-    struct B* next;
-};
-
-struct C{
-    struct B* k;
+    int b;
 };
 void main() {
-    struct C a;
-    a.k.a = 5;
-    printf("&d\n", a.k.a);
+    struct B k;
+    int t;
+    k.a = 5;
+    k->b = 3;
+    t = k->a + k.b;
+    printf("%d\n",t);
     return;
 }

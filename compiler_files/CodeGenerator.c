@@ -1,4 +1,5 @@
 #include	"CodeGenerator.h"
+#include "tree.h"
 
 typedef struct array_table {
     int typeSize;
@@ -215,35 +216,61 @@ void Remove(char* name)
     }
 }
 
-void FreeSymbolTableMemory(Variable* Head)
+void FreeSymbolTableMemory(Variable* start)
 {
-    Variable* ptr = head;
+    Variable* ptr = start;
     Symbol_table* tmpTable;
+    Variable* tmp;
     while (ptr->next != NULL)
     {
-        if (ptr->table->isArray)
+        if (ptr->table->isArray == 1)
         {
             free(ptr->table->arrayTable->dimSize);
-            free(ptr->table->arrayTable);
         }
-
-        free(ptr->table);
-        Variable* tmp = ptr;
+        tmp = ptr;
         ptr = ptr->next;
+
+        free(tmp->table->arrayTable);
+        free(tmp->table);
         free(tmp);
     }
 
     tmpTable = ptr->table;
-    if (tmpTable->isArray)
+    if (tmpTable->isArray == 1)
     {
         free(tmpTable->arrayTable->dimSize);
-        free(tmpTable->arrayTable);
     }
+    free(tmpTable->arrayTable);
     free(tmpTable);
     free(ptr);
-    free(head);
+    free(start);
 }
-
+void FreeStructs(Struct_table* start)
+{
+    Struct_table* ptr = start;
+    Struct_table* tmp;
+    if (ptr == NULL)
+    {
+        return;
+    }
+    while (ptr->next != NULL)
+    {
+        FreeSymbolTableMemory(ptr->Data);
+        tmp = ptr;
+        ptr = ptr->next;
+        free(tmp);
+    }
+    if(ptr != NULL)
+    {
+        FreeSymbolTableMemory(ptr->Data);
+        free(ptr->Data);
+        free(ptr);
+    }
+    if (start != NULL)
+    {
+        free(start);
+    }
+}
 void ClearData()
 {
     tmpSize = 0;
@@ -324,18 +351,18 @@ int  code_recur(treenode *root) {
                                     }
                                     if (isStructSelector)
                                     {
-                                        structIdent = leaf->data.sval->str;
+                                        structIdent = strcat(leaf->data.sval->str, "\0");
                                     }
                                 }
                             }
                         } else {
                             if (isObjDef) {
-                                objDefName = leaf->data.sval->str;
+                                objDefName = strcat(leaf->data.sval->str, "\0");
                             } else if (isObjRef) {
-                                tmpType = leaf->data.sval->str;
+                                tmpType = strcat(leaf->data.sval->str, "\0");
                                 tmpSize = FindStruct(leaf->data.sval->str)->totalSize;
                             } else {
-                                tmpName = leaf->data.sval->str;
+                                tmpName = strcat(leaf->data.sval->str, "\0");
                             }
                         }
                         //	printf("We are in teh Variable case\n");
@@ -773,6 +800,7 @@ int  code_recur(treenode *root) {
                                 code_recur(root->rnode);
                                 // In normal case we can't release memory here
                                 FreeSymbolTableMemory(head);
+                                FreeStructs(startHead);
 //                                FreeSymbolTableMemory(startHead);
                                // printf("ujp end_%i\n", prev_scope);
                             } else if (root->hdr.tok == BREAK) {
