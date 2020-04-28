@@ -921,18 +921,20 @@ int  code_recur(treenode *root) {
                                 /* e.g. x += 5; */
                                 code_recur(root->lnode);
                                 isLoadingVariable = 1;
+                                code_recur(root->lnode);
                                 code_recur(root->rnode);
                                 isLoadingVariable = 0;
-                                printf("inc 1\n");
+                                printf("add\n");
                                 printf("sto\n");
                             } else if (root->hdr.tok == MINUS_EQ) {
                                 /* Minus equal assignment "-=" */
                                 /* e.g. x -= 5; */
                                 code_recur(root->lnode);
                                 isLoadingVariable = 1;
+                                code_recur(root->lnode);
                                 code_recur(root->rnode);
                                 isLoadingVariable = 0;
-                                printf("dec 1\n");
+                                printf("sub\n");
                                 printf("sto\n");
 
                             } else if (root->hdr.tok == STAR_EQ) {
@@ -940,6 +942,7 @@ int  code_recur(treenode *root) {
                                 /* e.g. x *= 5; */
                                 code_recur(root->lnode);
                                 isLoadingVariable = 1;
+                                code_recur(root->lnode);
                                 code_recur(root->rnode);
                                 isLoadingVariable = 0;
                                 printf("mul\n");
@@ -950,6 +953,7 @@ int  code_recur(treenode *root) {
                                 /* e.g. x /= 5; */
                                 code_recur(root->lnode);
                                 isLoadingVariable = 1;
+                                code_recur(root->lnode);
                                 code_recur(root->rnode);
                                 isLoadingVariable = 0;
                                 printf("div\n");

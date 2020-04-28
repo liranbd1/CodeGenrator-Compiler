@@ -5,11 +5,12 @@ struct B
     int b;
 };
 void main() {
-    struct B k;
-    int t;
-    k.a = 5;
-    k->b = 3;
-    t = k->a + k.b;
-    printf("%d\n",t);
+    int a;
+    a = 5;
+    a += 1;
+    a*= 2;
+    a/= 3;
+    a-= 9;
+    printf("&d\n", a);
     return;
 }
