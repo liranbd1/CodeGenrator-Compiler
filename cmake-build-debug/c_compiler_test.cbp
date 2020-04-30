@@ -8,153 +8,155 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="C:/Users/liran/Documents/Compilers/cmake-build-debug"/>
+				<Option working_dir="C:/Users/rotem/Documents/uni/2.20/Compillers/CodeGenrator-Compiler/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/liran/Documents/Compilers/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/liran/Documents/Compilers/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/liran/Documents/Compilers/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/liran/Documents/Compilers/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/winbuilds/bin/mingw32-make.exe -f &quot;C:/Users/rotem/Documents/uni/2.20/Compillers/CodeGenrator-Compiler/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="C:/winbuilds/bin/mingw32-make.exe -f &quot;C:/Users/rotem/Documents/uni/2.20/Compillers/CodeGenrator-Compiler/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/winbuilds/bin/mingw32-make.exe -f &quot;C:/Users/rotem/Documents/uni/2.20/Compillers/CodeGenrator-Compiler/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/winbuilds/bin/mingw32-make.exe -f &quot;C:/Users/rotem/Documents/uni/2.20/Compillers/CodeGenrator-Compiler/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="c_compiler_test">
-				<Option output="C:/Users/liran/Documents/Compilers/cmake-build-debug/c_compiler_test.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="C:/Users/liran/Documents/Compilers/cmake-build-debug"/>
+				<Option output="C:/Users/rotem/Documents/uni/2.20/Compillers/CodeGenrator-Compiler/cmake-build-debug/c_compiler_test.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/rotem/Documents/uni/2.20/Compillers/CodeGenrator-Compiler/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="C:/Users/liran/Documents/Compilers/compiler_files"/>
-					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/9.2.0/include/c++"/>
-					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/9.2.0/include/c++/mingw32"/>
-					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/9.2.0/include/c++/backward"/>
-					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/9.2.0/include"/>
-					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/9.2.0/../../../../include"/>
-					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/9.2.0/include-fixed"/>
+					<Add directory="C:/Users/rotem/Documents/uni/2.20/Compillers/CodeGenrator-Compiler/compiler_files"/>
+					<Add directory="C:/winbuilds/include"/>
+					<Add directory="c:\winbuilds\bin\../lib64/gcc/x86_64-w64-mingw32/4.8.3/../../../../include/c++/4.8.3"/>
+					<Add directory="c:\winbuilds\bin\../lib64/gcc/x86_64-w64-mingw32/4.8.3/../../../../include/c++/4.8.3/x86_64-w64-mingw32"/>
+					<Add directory="c:\winbuilds\bin\../lib64/gcc/x86_64-w64-mingw32/4.8.3/../../../../include/c++/4.8.3/backward"/>
+					<Add directory="c:\winbuilds\bin\../lib64/gcc/x86_64-w64-mingw32/4.8.3/include"/>
+					<Add directory="c:\winbuilds\bin\../lib64/gcc/x86_64-w64-mingw32/4.8.3/include-fixed"/>
+					<Add directory="c:\winbuilds\bin\../lib64/gcc/x86_64-w64-mingw32/4.8.3/../../../../x86_64-w64-mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/liran/Documents/Compilers/cmake-build-debug/Makefile&quot;  VERBOSE=1 c_compiler_test"/>
-					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/liran/Documents/Compilers/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/liran/Documents/Compilers/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/liran/Documents/Compilers/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/winbuilds/bin/mingw32-make.exe -f &quot;C:/Users/rotem/Documents/uni/2.20/Compillers/CodeGenrator-Compiler/cmake-build-debug/Makefile&quot;  VERBOSE=1 c_compiler_test"/>
+					<CompileFile command="C:/winbuilds/bin/mingw32-make.exe -f &quot;C:/Users/rotem/Documents/uni/2.20/Compillers/CodeGenrator-Compiler/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/winbuilds/bin/mingw32-make.exe -f &quot;C:/Users/rotem/Documents/uni/2.20/Compillers/CodeGenrator-Compiler/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/winbuilds/bin/mingw32-make.exe -f &quot;C:/Users/rotem/Documents/uni/2.20/Compillers/CodeGenrator-Compiler/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="c_compiler_test/fast">
-				<Option output="C:/Users/liran/Documents/Compilers/cmake-build-debug/c_compiler_test.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="C:/Users/liran/Documents/Compilers/cmake-build-debug"/>
+				<Option output="C:/Users/rotem/Documents/uni/2.20/Compillers/CodeGenrator-Compiler/cmake-build-debug/c_compiler_test.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/rotem/Documents/uni/2.20/Compillers/CodeGenrator-Compiler/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="C:/Users/liran/Documents/Compilers/compiler_files"/>
-					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/9.2.0/include/c++"/>
-					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/9.2.0/include/c++/mingw32"/>
-					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/9.2.0/include/c++/backward"/>
-					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/9.2.0/include"/>
-					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/9.2.0/../../../../include"/>
-					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/9.2.0/include-fixed"/>
+					<Add directory="C:/Users/rotem/Documents/uni/2.20/Compillers/CodeGenrator-Compiler/compiler_files"/>
+					<Add directory="C:/winbuilds/include"/>
+					<Add directory="c:\winbuilds\bin\../lib64/gcc/x86_64-w64-mingw32/4.8.3/../../../../include/c++/4.8.3"/>
+					<Add directory="c:\winbuilds\bin\../lib64/gcc/x86_64-w64-mingw32/4.8.3/../../../../include/c++/4.8.3/x86_64-w64-mingw32"/>
+					<Add directory="c:\winbuilds\bin\../lib64/gcc/x86_64-w64-mingw32/4.8.3/../../../../include/c++/4.8.3/backward"/>
+					<Add directory="c:\winbuilds\bin\../lib64/gcc/x86_64-w64-mingw32/4.8.3/include"/>
+					<Add directory="c:\winbuilds\bin\../lib64/gcc/x86_64-w64-mingw32/4.8.3/include-fixed"/>
+					<Add directory="c:\winbuilds\bin\../lib64/gcc/x86_64-w64-mingw32/4.8.3/../../../../x86_64-w64-mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/liran/Documents/Compilers/cmake-build-debug/Makefile&quot;  VERBOSE=1 c_compiler_test/fast"/>
-					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/liran/Documents/Compilers/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/liran/Documents/Compilers/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/liran/Documents/Compilers/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/winbuilds/bin/mingw32-make.exe -f &quot;C:/Users/rotem/Documents/uni/2.20/Compillers/CodeGenrator-Compiler/cmake-build-debug/Makefile&quot;  VERBOSE=1 c_compiler_test/fast"/>
+					<CompileFile command="C:/winbuilds/bin/mingw32-make.exe -f &quot;C:/Users/rotem/Documents/uni/2.20/Compillers/CodeGenrator-Compiler/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/winbuilds/bin/mingw32-make.exe -f &quot;C:/Users/rotem/Documents/uni/2.20/Compillers/CodeGenrator-Compiler/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/winbuilds/bin/mingw32-make.exe -f &quot;C:/Users/rotem/Documents/uni/2.20/Compillers/CodeGenrator-Compiler/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="C:/Users/liran/Documents/Compilers/cmake-build-debug"/>
+				<Option working_dir="C:/Users/rotem/Documents/uni/2.20/Compillers/CodeGenrator-Compiler/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/liran/Documents/Compilers/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/liran/Documents/Compilers/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/liran/Documents/Compilers/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/liran/Documents/Compilers/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/winbuilds/bin/mingw32-make.exe -f &quot;C:/Users/rotem/Documents/uni/2.20/Compillers/CodeGenrator-Compiler/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="C:/winbuilds/bin/mingw32-make.exe -f &quot;C:/Users/rotem/Documents/uni/2.20/Compillers/CodeGenrator-Compiler/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/winbuilds/bin/mingw32-make.exe -f &quot;C:/Users/rotem/Documents/uni/2.20/Compillers/CodeGenrator-Compiler/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/winbuilds/bin/mingw32-make.exe -f &quot;C:/Users/rotem/Documents/uni/2.20/Compillers/CodeGenrator-Compiler/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="C:/Users/liran/Documents/Compilers/cmake-build-debug"/>
+				<Option working_dir="C:/Users/rotem/Documents/uni/2.20/Compillers/CodeGenrator-Compiler/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/liran/Documents/Compilers/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/liran/Documents/Compilers/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/liran/Documents/Compilers/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/liran/Documents/Compilers/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/winbuilds/bin/mingw32-make.exe -f &quot;C:/Users/rotem/Documents/uni/2.20/Compillers/CodeGenrator-Compiler/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="C:/winbuilds/bin/mingw32-make.exe -f &quot;C:/Users/rotem/Documents/uni/2.20/Compillers/CodeGenrator-Compiler/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/winbuilds/bin/mingw32-make.exe -f &quot;C:/Users/rotem/Documents/uni/2.20/Compillers/CodeGenrator-Compiler/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/winbuilds/bin/mingw32-make.exe -f &quot;C:/Users/rotem/Documents/uni/2.20/Compillers/CodeGenrator-Compiler/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="C:/Users/liran/Documents/Compilers/compiler_files/CodeGenerator.c">
+		<Unit filename="C:/Users/rotem/Documents/uni/2.20/Compillers/CodeGenrator-Compiler/compiler_files/CodeGenerator.c">
 			<Option target="c_compiler_test"/>
 		</Unit>
-		<Unit filename="C:/Users/liran/Documents/Compilers/compiler_files/CodeGenerator.h">
+		<Unit filename="C:/Users/rotem/Documents/uni/2.20/Compillers/CodeGenrator-Compiler/compiler_files/CodeGenerator.h">
 			<Option target="c_compiler_test"/>
 		</Unit>
-		<Unit filename="C:/Users/liran/Documents/Compilers/compiler_files/ctree.c">
+		<Unit filename="C:/Users/rotem/Documents/uni/2.20/Compillers/CodeGenrator-Compiler/compiler_files/ctree.c">
 			<Option target="c_compiler_test"/>
 		</Unit>
-		<Unit filename="C:/Users/liran/Documents/Compilers/compiler_files/ctree.h">
+		<Unit filename="C:/Users/rotem/Documents/uni/2.20/Compillers/CodeGenrator-Compiler/compiler_files/ctree.h">
 			<Option target="c_compiler_test"/>
 		</Unit>
-		<Unit filename="C:/Users/liran/Documents/Compilers/compiler_files/dsm_extension.c">
+		<Unit filename="C:/Users/rotem/Documents/uni/2.20/Compillers/CodeGenrator-Compiler/compiler_files/dsm_extension.c">
 			<Option target="c_compiler_test"/>
 		</Unit>
-		<Unit filename="C:/Users/liran/Documents/Compilers/compiler_files/dsm_extension.h">
+		<Unit filename="C:/Users/rotem/Documents/uni/2.20/Compillers/CodeGenrator-Compiler/compiler_files/dsm_extension.h">
 			<Option target="c_compiler_test"/>
 		</Unit>
-		<Unit filename="C:/Users/liran/Documents/Compilers/compiler_files/gram.c">
+		<Unit filename="C:/Users/rotem/Documents/uni/2.20/Compillers/CodeGenrator-Compiler/compiler_files/gram.c">
 			<Option target="c_compiler_test"/>
 		</Unit>
-		<Unit filename="C:/Users/liran/Documents/Compilers/compiler_files/gram.h">
+		<Unit filename="C:/Users/rotem/Documents/uni/2.20/Compillers/CodeGenrator-Compiler/compiler_files/gram.h">
 			<Option target="c_compiler_test"/>
 		</Unit>
-		<Unit filename="C:/Users/liran/Documents/Compilers/compiler_files/heap.c">
+		<Unit filename="C:/Users/rotem/Documents/uni/2.20/Compillers/CodeGenrator-Compiler/compiler_files/heap.c">
 			<Option target="c_compiler_test"/>
 		</Unit>
-		<Unit filename="C:/Users/liran/Documents/Compilers/compiler_files/heap.h">
+		<Unit filename="C:/Users/rotem/Documents/uni/2.20/Compillers/CodeGenrator-Compiler/compiler_files/heap.h">
 			<Option target="c_compiler_test"/>
 		</Unit>
-		<Unit filename="C:/Users/liran/Documents/Compilers/compiler_files/lexer.c">
+		<Unit filename="C:/Users/rotem/Documents/uni/2.20/Compillers/CodeGenrator-Compiler/compiler_files/lexer.c">
 			<Option target="c_compiler_test"/>
 		</Unit>
-		<Unit filename="C:/Users/liran/Documents/Compilers/compiler_files/lexer.h">
+		<Unit filename="C:/Users/rotem/Documents/uni/2.20/Compillers/CodeGenrator-Compiler/compiler_files/lexer.h">
 			<Option target="c_compiler_test"/>
 		</Unit>
-		<Unit filename="C:/Users/liran/Documents/Compilers/compiler_files/nmetab.c">
+		<Unit filename="C:/Users/rotem/Documents/uni/2.20/Compillers/CodeGenrator-Compiler/compiler_files/nmetab.c">
 			<Option target="c_compiler_test"/>
 		</Unit>
-		<Unit filename="C:/Users/liran/Documents/Compilers/compiler_files/nmetab.h">
+		<Unit filename="C:/Users/rotem/Documents/uni/2.20/Compillers/CodeGenrator-Compiler/compiler_files/nmetab.h">
 			<Option target="c_compiler_test"/>
 		</Unit>
-		<Unit filename="C:/Users/liran/Documents/Compilers/compiler_files/prnttree.c">
+		<Unit filename="C:/Users/rotem/Documents/uni/2.20/Compillers/CodeGenrator-Compiler/compiler_files/prnttree.c">
 			<Option target="c_compiler_test"/>
 		</Unit>
-		<Unit filename="C:/Users/liran/Documents/Compilers/compiler_files/prnttree.h">
+		<Unit filename="C:/Users/rotem/Documents/uni/2.20/Compillers/CodeGenrator-Compiler/compiler_files/prnttree.h">
 			<Option target="c_compiler_test"/>
 		</Unit>
-		<Unit filename="C:/Users/liran/Documents/Compilers/compiler_files/symtab.c">
+		<Unit filename="C:/Users/rotem/Documents/uni/2.20/Compillers/CodeGenrator-Compiler/compiler_files/symtab.c">
 			<Option target="c_compiler_test"/>
 		</Unit>
-		<Unit filename="C:/Users/liran/Documents/Compilers/compiler_files/symtab.h">
+		<Unit filename="C:/Users/rotem/Documents/uni/2.20/Compillers/CodeGenrator-Compiler/compiler_files/symtab.h">
 			<Option target="c_compiler_test"/>
 		</Unit>
-		<Unit filename="C:/Users/liran/Documents/Compilers/compiler_files/token.c">
+		<Unit filename="C:/Users/rotem/Documents/uni/2.20/Compillers/CodeGenrator-Compiler/compiler_files/token.c">
 			<Option target="c_compiler_test"/>
 		</Unit>
-		<Unit filename="C:/Users/liran/Documents/Compilers/compiler_files/token.h">
+		<Unit filename="C:/Users/rotem/Documents/uni/2.20/Compillers/CodeGenrator-Compiler/compiler_files/token.h">
 			<Option target="c_compiler_test"/>
 		</Unit>
-		<Unit filename="C:/Users/liran/Documents/Compilers/compiler_files/tree.c">
+		<Unit filename="C:/Users/rotem/Documents/uni/2.20/Compillers/CodeGenrator-Compiler/compiler_files/tree.c">
 			<Option target="c_compiler_test"/>
 		</Unit>
-		<Unit filename="C:/Users/liran/Documents/Compilers/compiler_files/tree.h">
+		<Unit filename="C:/Users/rotem/Documents/uni/2.20/Compillers/CodeGenrator-Compiler/compiler_files/tree.h">
 			<Option target="c_compiler_test"/>
 		</Unit>
-		<Unit filename="C:/Users/liran/Documents/Compilers/compiler_files/treestk.c">
+		<Unit filename="C:/Users/rotem/Documents/uni/2.20/Compillers/CodeGenrator-Compiler/compiler_files/treestk.c">
 			<Option target="c_compiler_test"/>
 		</Unit>
-		<Unit filename="C:/Users/liran/Documents/Compilers/compiler_files/treestk.h">
+		<Unit filename="C:/Users/rotem/Documents/uni/2.20/Compillers/CodeGenrator-Compiler/compiler_files/treestk.h">
 			<Option target="c_compiler_test"/>
 		</Unit>
-		<Unit filename="C:/Users/liran/Documents/Compilers/CMakeLists.txt">
+		<Unit filename="C:/Users/rotem/Documents/uni/2.20/Compillers/CodeGenrator-Compiler/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>
