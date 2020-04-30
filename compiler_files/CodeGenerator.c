@@ -1,5 +1,4 @@
 #include	"CodeGenerator.h"
-#include "tree.h"
 
 typedef struct array_table {
     int typeSize;
@@ -32,6 +31,12 @@ typedef struct Struct_table{
     char* name;
     struct Struct_table* next;
 }Struct_table;
+
+typedef struct scopeData{
+    int scope_counter;
+    int prev_scope;
+    int loop_level
+}scopeData;
 
 int structAccessCounter = 0;
 char* tmpName;
@@ -67,6 +72,8 @@ int isStructSelector = 0;
 int isINCRDECR = 0;
 int counter =0;
 char* lastType;
+scopeData *scope;
+
 
 Symbol_table* Find (const char* name, Variable* start)
 {
@@ -313,9 +320,12 @@ int  code_recur(treenode *root) {
     if_node *ifn;
     for_node *forn;
     leafnode *leaf;
+    int local_scope;
 
     if (!root)
         return SUCCESS;
+
+    local_scope=loop_level;
 
     switch (root->hdr.which) {
         case LEAF_T:
@@ -477,7 +487,6 @@ int  code_recur(treenode *root) {
                                 code_recur(ifn->then_n);
                                 printf("end_%i:\n", loop_level);
                             } else {
-                                //loop_level = root->hdr.c_contxt->syms->clevel;
                                 /* if - else case*/
                                 code_recur(ifn->cond);
                                 printf("fjp else_%i\n", loop_level);
@@ -507,7 +516,8 @@ int  code_recur(treenode *root) {
                             code_recur(ifn->then_n);
                             code_recur(ifn->else_n);
                     }
-                    loop_level = prev_scope;
+                    loop_level = local_scope;
+
                     break;
 
                 case FOR_T:
@@ -530,7 +540,6 @@ int  code_recur(treenode *root) {
                             /* For case*/
                             /* e.g. for(i=0;i<5;i++) { ... } */
                             /* Look at the output AST structure! */
-                            //loop_level = root->hdr.c_contxt->syms->clevel;
                             code_recur(forn->init);
                             printf("for_loop_%i:\n", loop_level);
                             code_recur(forn->test);
@@ -548,7 +557,7 @@ int  code_recur(treenode *root) {
                             code_recur(forn->stemnt);
                             code_recur(forn->incr);
                     }
-                    loop_level = prev_scope;
+                    loop_level = local_scope;
                     break;
 
                 case NODE_T:
@@ -851,8 +860,6 @@ int  code_recur(treenode *root) {
                                 // In normal case we can't release memory here
                                 FreeSymbolTableMemory(head);
                                 FreeStructs(startHead);
-//                                FreeSymbolTableMemory(startHead);
-                               // printf("ujp end_%i\n", prev_scope);
                             } else if (root->hdr.tok == BREAK) {
                                 /* break jump - for HW2! */
                                 code_recur(root->lnode);
@@ -1268,7 +1275,7 @@ int  code_recur(treenode *root) {
                             code_recur(root->rnode);
                             printf("ujp while_loop_%i\n", loop_level);
                             printf("end_%i:\n", loop_level);
-                            loop_level = prev_scope;
+                            loop_level = local_scope;
                             break;
 
                         case TN_DOWHILE:
@@ -1281,7 +1288,7 @@ int  code_recur(treenode *root) {
                             printf("fjp end_%i\n", loop_level);
                             printf("ujp do_while_loop_%i\n", loop_level);
                             printf("end_%i:\n", loop_level);
-                            loop_level = prev_scope;
+                            loop_level = local_scope;
                             break;
 
                         case TN_LABEL:
