@@ -33,6 +33,7 @@ typedef struct Struct_table{
     struct Struct_table* next;
 }Struct_table;
 
+int structAccessCounter = 0;
 char* tmpName;
 char* tmpType;
 int tmpSize;
@@ -64,6 +65,8 @@ int enterLeftSon = 0;
 char* structIdent;
 int isStructSelector = 0;
 int isINCRDECR = 0;
+int counter =0;
+char* lastType;
 
 Symbol_table* Find (const char* name, Variable* start)
 {
@@ -91,6 +94,7 @@ Struct_table * FindStruct(const char* name)
         ptr = ptr->next;
     }
 }
+
 Symbol_table* FindByType (const char* type)
 {
     Variable* currentPtr = head;
@@ -152,7 +156,21 @@ void Add (Symbol_table * newSymbol, Variable* start)
         start->first = start;
         if (isComponent)
         {
-            startHead->Data = start;
+            if (startHead == NULL)
+            {
+                startHead->Data = start;
+            }
+
+            else
+            {
+               Struct_table* struct_ptr = startHead;
+               while (struct_ptr->next != NULL)
+               {
+                   struct_ptr = struct_ptr->next;
+               }
+
+               struct_ptr->Data = start;
+            }
         } else{
             head = start;
         }
@@ -190,8 +208,9 @@ void AddStruct(Struct_table* newStruct)
         }
 
         ptr->next = newStruct;
-        newStruct->next = NULL;
-        newStruct->Data = NULL;
+        ptr = ptr->next;
+        ptr->next = NULL;
+        ptr->Data = NULL;
     }
 }
 
@@ -319,12 +338,21 @@ int  code_recur(treenode *root) {
                     if (!isDeclaration) {
                         if (isAccessStruct) {
                             //tmpType hold us the struct name;
-                            pVariable = Find(leaf->data.sval->str, FindStruct(tmpType)->Data);
+                            if (structAccessCounter == 1)
+                            {
+                                pVariable = Find(leaf->data.sval->str, FindStruct(lastType)->Data);
+                            } else{
+                                pVariable = Find(leaf->data.sval->str, FindStruct(tmpType)->Data);
+                            }
                             printf("inc %d\n", pVariable->address - 1);
                             if (isLoadingVariable){
                                if(!isINCRDECR)
                                 {
-                                    printf("ind\n");
+                                   if (structAccessCounter == 1)
+                                   {
+                                       printf("ind\n");
+                                   }
+
                                 }
 
                             }
@@ -334,6 +362,18 @@ int  code_recur(treenode *root) {
                                     printf("ind\n");
                                     derefLoop--;
                                 }
+                            }
+                            if (structAccessCounter)
+                            {
+                                structIdent = leaf->data.sval->str;
+                                if (structAccessCounter == 1)
+                                {
+                                    lastType = pVariable->type;
+                                } else{
+                                    tmpType = pVariable->type;
+                                    lastType = tmpType;
+                                }
+
                             }
                             } else {
                                 pVariable = Find(leaf->data.sval->str, head);
@@ -349,9 +389,19 @@ int  code_recur(treenode *root) {
                                             derefLoop--;
                                         }
                                     }
-                                    if (isStructSelector)
+                                    if (structAccessCounter)
                                     {
-                                        structIdent = strcat(leaf->data.sval->str, "\0");
+                                        structIdent = leaf->data.sval->str;
+                                        if (structAccessCounter == 1)
+                                        {
+                                            lastType = pVariable->type;
+                                        }
+                                        else
+                                        {
+                                            tmpType = pVariable->type;
+                                            lastType = tmpType;
+                                        }
+
                                     }
                                 }
                             }
@@ -624,7 +674,7 @@ int  code_recur(treenode *root) {
                             pVariable = Find(tmpType, head);
                             if (pVariable != NULL) {
                                 leaf = (leafnode *) root->rnode->lnode;
-                                if (tmpType != pVariable->name) {
+                                if (tmpType != objDefName) {
                                     if (leaf->hdr.type == TN_PNTR) {
                                         tmpSize = 1;
                                     } else {
@@ -868,38 +918,63 @@ int  code_recur(treenode *root) {
                                 /* e.g. struct_variable->x; */
                                 enterLeftSon = 1;
                                 code_recur(root->lnode);
+                                structAccessCounter++;
+                                printf("ind\n");
                                 enterLeftSon = 0;
                                 isAccessStruct = 1;
+                                counter = structAccessCounter;
+                                while (counter>0)
+                                {
+                                    root = root->lnode;
+                                    counter--;
+                                }
                                 leaf = (leafnode *) root->lnode;
-                                if (leaf->hdr.type == TN_INDEX)
+                               /* if (leaf->hdr.type == TN_INDEX)
                                 {
                                     tmpType = Find(structIdent, head)->type;
                                 } else
                                 {
                                     tmpType = Find(leaf->data.sval->str, head)->type;
-                                }
+                                }*/
+                                tmpType = Find(structIdent, head)->type;
                                 code_recur(root->rnode);
+                                structAccessCounter--;
 
                             } else {
                                 /* Struct select case "." */
                                 /* e.g. struct_variable.x; */
                                 enterLeftSon = 1;
+                                structAccessCounter++;
                                 code_recur(root->lnode);
                                 enterLeftSon = 0;
                                 isAccessStruct = 1;
+                                counter = structAccessCounter;
+                              /*  while (counter>0)
+                                {
+                                    root = root->lnode;
+                                    counter--;
+                                }*/
                                 leaf = (leafnode *) root->lnode;
-                                if (leaf->hdr.type == TN_INDEX)
+                                /*if (leaf->hdr.type == TN_INDEX)
                                 {
                                     tmpType = Find(structIdent, head)->type;
                                 } else
                                 {
-                                    tmpType = Find(leaf->data.sval->str, head)->type;
-                                }
-                                code_recur(root->rnode);
 
+                                }*/
+                                if (counter <= structAccessCounter)
+                                {
+                                 //   tmpType = Find(structIdent, head)->type;
+                                }
+
+                                code_recur(root->rnode);
                             }
-                            tmpType = "";
-                            structIdent = "";
+                          //  tmpType = "";
+                          structAccessCounter--;
+                          if (structAccessCounter == 0){
+                                tmpType = "";
+                                structIdent = "";
+                            }
                             isAccessStruct = 0;
                             isStructSelector = 0;
                             break;
@@ -1170,7 +1245,9 @@ int  code_recur(treenode *root) {
 
                                 case B_AND:
                                     code_recur(root->lnode);
+                                    isLoadingVariable = !isLoadingVariable;
                                     code_recur(root->rnode);
+                                    isLoadingVariable = !isLoadingVariable;
                                     isPointer = 1;
                                     break;
 

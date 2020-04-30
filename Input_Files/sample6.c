@@ -4,13 +4,16 @@ struct B
     int a;
     int b;
 };
+
+struct C{
+    struct B k;
+};
+
 void main() {
-    int a;
-    a = 5;
-    a += 1;
-    a*= 2;
-    a/= 3;
-    a-= 9;
-    printf("&d\n", a);
+    struct C cobj;
+    struct B b;
+    b.a = 5;
+    cobj.k.a = 20;
+    printf("%d\n",cobj.k.a);
     return;
 }
