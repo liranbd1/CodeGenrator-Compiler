@@ -874,8 +874,16 @@ int  code_recur(treenode *root) {
 
                         case TN_SWITCH:
                             /* Switch case - for HW2! */
+                            prev_scope=loop_level;
+                            loop_level=scope_counter++;
+                            isLoadingVariable=1;
                             code_recur(root->lnode);
+                            printf("switch_%i:\n",loop_level);
+                            printf("dpl\n");
                             code_recur(root->rnode);
+                            isLoadingVariable=0;
+                            printf("end_%i:\n",loop_level);
+                            loop_level=local_scope;
                             break;
 
                         case TN_INDEX:
@@ -1267,7 +1275,7 @@ int  code_recur(treenode *root) {
 
 
                         case TN_WHILE:
-                            prev_scope = loop_level;
+                            prev_scope=loop_level;
                             loop_level = scope_counter++;
                             printf("while_loop_%i:\n", loop_level);
                             code_recur(root->lnode);
@@ -1293,7 +1301,13 @@ int  code_recur(treenode *root) {
 
                         case TN_LABEL:
                             code_recur(root->lnode);
+                            prev_scope=loop_level;
+                            loop_level=scope_counter++;
+                            printf("equ\nfjp switch_%d\n",loop_level);
                             code_recur(root->rnode);
+                            printf("switch_%d:\n",loop_level);
+                            printf("dpl\n");
+                            loop_level=local_scope;
                             break;
 
                         default:
