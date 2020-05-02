@@ -35,7 +35,7 @@ typedef struct Struct_table{
 typedef struct scopeData{
     int scope_counter;
     int prev_scope;
-    int loop_level
+    int loop_level;
 }scopeData;
 
 int structAccessCounter = 0;

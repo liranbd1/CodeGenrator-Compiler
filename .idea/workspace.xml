@@ -11,7 +11,43 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3c46d69a-7da0-4cf4-99db-1aa51522c66e" name="Default Changelist" comment="" />
+    <list default="true" id="3c46d69a-7da0-4cf4-99db-1aa51522c66e" name="Default Changelist" comment="fix loop labels">
+      <change afterPath="$PROJECT_DIR$/Input_Files/sample11.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input_Files/sample10.c" beforeDir="false" afterPath="$PROJECT_DIR$/Input_Files/sample10.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input_Files/sample8.c" beforeDir="false" afterPath="$PROJECT_DIR$/Input_Files/sample8.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input_Files/sample9.c" beforeDir="false" afterPath="$PROJECT_DIR$/Input_Files/sample9.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.15.3/CMakeDetermineCompilerABI_C.bin" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.15.3/CMakeDetermineCompilerABI_C.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.15.3/CMakeDetermineCompilerABI_CXX.bin" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.15.3/CMakeDetermineCompilerABI_CXX.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeOutput.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeOutput.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TargetDirectories.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TargetDirectories.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/c_compiler_test.dir/C.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/c_compiler_test.dir/C.includecache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/c_compiler_test.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/c_compiler_test.dir/DependInfo.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/c_compiler_test.dir/compiler_files/CodeGenerator.c.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/c_compiler_test.dir/compiler_files/CodeGenerator.c.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/c_compiler_test.dir/compiler_files/ctree.c.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/c_compiler_test.dir/compiler_files/ctree.c.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/c_compiler_test.dir/compiler_files/dsm_extension.c.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/c_compiler_test.dir/compiler_files/dsm_extension.c.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/c_compiler_test.dir/compiler_files/gram.c.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/c_compiler_test.dir/compiler_files/gram.c.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/c_compiler_test.dir/compiler_files/heap.c.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/c_compiler_test.dir/compiler_files/heap.c.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/c_compiler_test.dir/compiler_files/lexer.c.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/c_compiler_test.dir/compiler_files/lexer.c.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/c_compiler_test.dir/compiler_files/nmetab.c.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/c_compiler_test.dir/compiler_files/nmetab.c.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/c_compiler_test.dir/compiler_files/prnttree.c.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/c_compiler_test.dir/compiler_files/prnttree.c.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/c_compiler_test.dir/compiler_files/symtab.c.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/c_compiler_test.dir/compiler_files/symtab.c.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/c_compiler_test.dir/compiler_files/token.c.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/c_compiler_test.dir/compiler_files/token.c.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/c_compiler_test.dir/compiler_files/tree.c.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/c_compiler_test.dir/compiler_files/tree.c.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/c_compiler_test.dir/compiler_files/treestk.c.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/c_compiler_test.dir/compiler_files/treestk.c.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/c_compiler_test.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/c_compiler_test.dir/depend.internal" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/c_compiler_test.dir/includes_C.rsp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/c_compiler_test.dir/includes_C.rsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/c_compiler_test.dir/objects.a" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/c_compiler_test.dir/objects.a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/c_compiler_test.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/c_compiler_test.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/cmake_install.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/cmake_install.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/compiler_files/CodeGenerator.c" beforeDir="false" afterPath="$PROJECT_DIR$/compiler_files/CodeGenerator.c" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -21,6 +57,10 @@
     <option name="formatViaClangd" value="false" />
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="MERGE" />
+  </component>
   <component name="ProjectId" id="1b5gpUueFH4nxNkk2eeD8fEvgs3" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -31,13 +71,18 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
   </component>
   <component name="RunManager">
-    <configuration name="c_compiler_test" type="CMakeRunConfiguration" factoryName="Application" editBeforeRun="true" PROGRAM_PARAMS="-Pcode Input_Files\sample6.c" WORKING_DIR="file://$PROJECT_DIR$" PASS_PARENT_ENVS_2="true" PROJECT_NAME="c_compiler_test" TARGET_NAME="c_compiler_test" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="c_compiler_test" RUN_TARGET_NAME="c_compiler_test">
+    <configuration name="c_compiler_test" type="CMakeRunConfiguration" factoryName="Application" editBeforeRun="true" PROGRAM_PARAMS="-Pcode Input_Files\sample11.c" WORKING_DIR="file://$PROJECT_DIR$" PASS_PARENT_ENVS_2="true" PROJECT_NAME="c_compiler_test" TARGET_NAME="c_compiler_test" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="c_compiler_test" RUN_TARGET_NAME="c_compiler_test">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -54,20 +99,44 @@
       <workItem from="1588018303331" duration="12000" />
       <workItem from="1588099890491" duration="5046000" />
       <workItem from="1588108574933" duration="540000" />
-      <workItem from="1588238347387" duration="12415000" />
     </task>
+    <task id="LOCAL-00001" summary="fix loop labels">
+      <created>1588273316335</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1588273316335</updated>
+    </task>
+    <task id="LOCAL-00002" summary="fix loop labels">
+      <created>1588279937838</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1588279937838</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="fix loop labels" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix loop labels" />
+  </component>
   <component name="WindowStateProjectService">
-    <state x="1195" y="255" key="#c_compiler_test" timestamp="1588260643728">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="335" y="26" key="#c_compiler_test" timestamp="1588279487499">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
+    <state x="335" y="26" key="#c_compiler_test/0.0.1280.680@0.0.1280.680" timestamp="1588279487499" />
     <state x="1195" y="255" key="#c_compiler_test/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1588109090959" />
-    <state x="1195" y="255" key="#c_compiler_test/0.0.1920.1040@0.0.1920.1040" timestamp="1588260643728" />
-    <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1587928339583">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="1195" y="255" key="#c_compiler_test/0.0.1920.1040@0.0.1920.1040" timestamp="1588017717933" />
+    <state x="194" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1588279231089">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
+    <state x="194" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.680@0.0.1280.680" timestamp="1588279231089" />
     <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1587928339583" />
+    <state x="375" y="143" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1588272770123">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="375" y="143" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1280.680@0.0.1280.680" timestamp="1588272770123" />
     <state x="865" y="273" width="578" height="513" key="#xdebugger.XInspectDialog" timestamp="1588101799349">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -76,64 +145,97 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="715" y="223" key="#xdebugger.evaluate/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1588101782851" />
-    <state width="526" height="466" key="DebuggerActiveHint" timestamp="1588245750115">
+    <state x="221" y="0" key="CommitChangelistDialog2" timestamp="1588279936629">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="221" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1588279936629" />
+    <state width="526" height="466" key="DebuggerActiveHint" timestamp="1588108801615">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="526" height="466" key="DebuggerActiveHint/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1588108801615" />
-    <state width="526" height="466" key="DebuggerActiveHint/0.0.1920.1040@0.0.1920.1040" timestamp="1588245750115" />
+    <state width="526" height="466" key="DebuggerActiveHint/0.0.1920.1040@0.0.1920.1040" timestamp="1588016204433" />
+    <state x="122" y="50" key="DiffContextDialog" timestamp="1588278260484">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="122" y="50" key="DiffContextDialog/0.0.1280.680@0.0.1280.680" timestamp="1588278260484" />
     <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1587932288186">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1587932288186" />
-    <state width="1877" height="299" key="GridCell.Tab.0.bottom" timestamp="1588260644854">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1237" height="2" key="GridCell.Tab.0.bottom" timestamp="1588323545624">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
+    <state width="1237" height="2" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1588323545624" />
     <state width="1877" height="354" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1588109116043" />
-    <state width="1877" height="299" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1588260644854" />
-    <state width="1877" height="299" key="GridCell.Tab.0.center" timestamp="1588260644853">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1877" height="285" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1588018005599" />
+    <state width="1237" height="2" key="GridCell.Tab.0.center" timestamp="1588323545624">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
+    <state width="1237" height="2" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1588323545624" />
     <state width="1877" height="354" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1588109116043" />
-    <state width="1877" height="299" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1588260644853" />
-    <state width="1877" height="299" key="GridCell.Tab.0.left" timestamp="1588260644853">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1877" height="285" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1588018005599" />
+    <state width="1237" height="2" key="GridCell.Tab.0.left" timestamp="1588323545624">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
+    <state width="1237" height="2" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1588323545624" />
     <state width="1877" height="354" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1588109116043" />
-    <state width="1877" height="299" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1588260644853" />
-    <state width="1877" height="299" key="GridCell.Tab.0.right" timestamp="1588260644854">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1877" height="285" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1588018005599" />
+    <state width="1237" height="2" key="GridCell.Tab.0.right" timestamp="1588323545624">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
+    <state width="1237" height="2" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1588323545624" />
     <state width="1877" height="354" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1588109116043" />
-    <state width="1877" height="299" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1588260644854" />
-    <state width="1877" height="354" key="GridCell.Tab.1.bottom" timestamp="1588260643791">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1877" height="285" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1588018005599" />
+    <state width="594" height="235" key="GridCell.Tab.1.bottom" timestamp="1588323545620">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
+    <state width="594" height="235" key="GridCell.Tab.1.bottom/0.0.1280.680@0.0.1280.680" timestamp="1588323545620" />
     <state width="1877" height="354" key="GridCell.Tab.1.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1588109116044" />
-    <state width="1877" height="354" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1588260643791" />
-    <state width="1877" height="354" key="GridCell.Tab.1.center" timestamp="1588260643791">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1877" height="285" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1588018005599" />
+    <state width="594" height="235" key="GridCell.Tab.1.center" timestamp="1588323545620">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
+    <state width="594" height="235" key="GridCell.Tab.1.center/0.0.1280.680@0.0.1280.680" timestamp="1588323545620" />
     <state width="1877" height="354" key="GridCell.Tab.1.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1588109116044" />
-    <state width="1877" height="354" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1588260643791" />
-    <state width="1877" height="354" key="GridCell.Tab.1.left" timestamp="1588260643791">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1877" height="285" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1588018005599" />
+    <state width="594" height="235" key="GridCell.Tab.1.left" timestamp="1588323545620">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
+    <state width="594" height="235" key="GridCell.Tab.1.left/0.0.1280.680@0.0.1280.680" timestamp="1588323545620" />
     <state width="1877" height="354" key="GridCell.Tab.1.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1588109116043" />
-    <state width="1877" height="354" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1588260643791" />
-    <state width="1877" height="354" key="GridCell.Tab.1.right" timestamp="1588260643791">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1877" height="285" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1588018005599" />
+    <state width="594" height="235" key="GridCell.Tab.1.right" timestamp="1588323545620">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
+    <state width="594" height="235" key="GridCell.Tab.1.right/0.0.1280.680@0.0.1280.680" timestamp="1588323545620" />
     <state width="1877" height="354" key="GridCell.Tab.1.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1588109116044" />
-    <state width="1877" height="354" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1588260643791" />
+    <state width="1877" height="285" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1588018005599" />
+    <state x="122" y="50" key="MergeDialog" timestamp="1588273214031">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="122" y="50" key="MergeDialog/0.0.1280.680@0.0.1280.680" timestamp="1588273214031" />
+    <state x="354" y="56" key="MultipleFileMergeDialog" timestamp="1588273228564">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="354" y="56" key="MultipleFileMergeDialog/0.0.1280.680@0.0.1280.680" timestamp="1588273228564" />
     <state x="92" y="92" width="1736" height="856" maximized="true" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1588015211154">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="92" y="92" width="1736" height="856" maximized="true" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1588015211154" />
-    <state x="656" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1588238350393">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="437" y="225" key="com.intellij.ide.util.TipDialog" timestamp="1588415196302">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
+    <state x="437" y="225" key="com.intellij.ide.util.TipDialog/0.0.1280.680@0.0.1280.680" timestamp="1588415196302" />
     <state x="656" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1588108576861" />
-    <state x="656" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1588238350393" />
+    <state x="656" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1588018304073" />
+    <state x="448" y="257" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1588272745045">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="448" y="257" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1280.680@0.0.1280.680" timestamp="1588272745045" />
+    <state x="-22" y="154" key="run.anything.popup" timestamp="1588276777103">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="-22" y="154" key="run.anything.popup/0.0.1280.680@0.0.1280.680" timestamp="1588276777103" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1588103416563">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -145,33 +247,73 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/compiler_files/CodeGenerator.c</url>
-          <line>974</line>
-          <option name="timeStamp" value="86" />
+          <line>958</line>
+          <option name="timeStamp" value="41" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/compiler_files/CodeGenerator.c</url>
-          <line>382</line>
-          <option name="timeStamp" value="88" />
+          <line>1063</line>
+          <option name="timeStamp" value="44" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/compiler_files/CodeGenerator.c</url>
-          <line>387</line>
-          <option name="timeStamp" value="90" />
+          <line>239</line>
+          <option name="timeStamp" value="52" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/compiler_files/CodeGenerator.c</url>
-          <line>361</line>
-          <option name="timeStamp" value="91" />
+          <line>247</line>
+          <option name="timeStamp" value="55" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/compiler_files/CodeGenerator.c</url>
-          <line>921</line>
-          <option name="timeStamp" value="93" />
+          <line>289</line>
+          <option name="timeStamp" value="56" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/compiler_files/CodeGenerator.c</url>
-          <line>352</line>
-          <option name="timeStamp" value="94" />
+          <line>268</line>
+          <option name="timeStamp" value="58" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/compiler_files/CodeGenerator.c</url>
+          <line>480</line>
+          <option name="timeStamp" value="62" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/compiler_files/CodeGenerator.c</url>
+          <line>490</line>
+          <option name="timeStamp" value="63" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/compiler_files/CodeGenerator.c</url>
+          <line>503</line>
+          <option name="timeStamp" value="64" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/compiler_files/CodeGenerator.c</url>
+          <line>543</line>
+          <option name="timeStamp" value="65" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/compiler_files/CodeGenerator.c</url>
+          <line>1198</line>
+          <option name="timeStamp" value="66" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/compiler_files/CodeGenerator.c</url>
+          <line>1211</line>
+          <option name="timeStamp" value="68" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/compiler_files/CodeGenerator.c</url>
+          <line>879</line>
+          <option name="timeStamp" value="69" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/compiler_files/CodeGenerator.c</url>
+          <line>1302</line>
+          <option name="timeStamp" value="71" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -180,9 +322,6 @@
         <watch expression="startHead" language="ObjectiveC" />
         <watch expression="head" language="ObjectiveC" />
         <watch expression="enterLeftSon" language="ObjectiveC" />
-        <watch expression="objDefName" language="ObjectiveC" />
-        <watch expression="structIdent" language="ObjectiveC" />
-        <watch expression="tmpType" language="ObjectiveC" />
       </configuration>
     </watches-manager>
   </component>
